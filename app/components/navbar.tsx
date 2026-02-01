@@ -1,19 +1,24 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "./navbar.module.css";
+import styles from "../lib/styles/navbar.module.css";
+import { RouteContext } from "./navContext";
 
 // eslint-disable-next-line react/prop-types
 export default function Navbar() {
 
-  const [current, setCurrent] = useState<string | undefined>(undefined);
+  const {current, setCurrent} = useContext(RouteContext);
+
+  useEffect(() => {
+    console.log(" current value is : ", current);
+  }, [current])
 
   return (
     <nav className={styles.nav}>
       <Link href="/">
-        <Image className={styles.logo} alt="" src="/logo.svg" width={150} height={15} /> 
+        <Image id="logo" loading="eager" alt="" src="/logo.svg" width={150} height={15} onClick={() => setCurrent("")} /> 
       </Link>
       <ul className={styles.desk} >
         <li className={current == "stories" ? styles.active : ''} onClick={() => setCurrent("stories")}>
@@ -26,18 +31,20 @@ export default function Navbar() {
           <Link href="/pricing">PRICING</Link>
         </li>
       </ul>
-      <button className={styles.desk} ><a href="mailto:yohananchris@outlook.com">GET AN INVITE</a></button>
-      {/*<span ></span>
-      <label id="hamburger" className={styles.mob} htmlFor="fakeInput">
-        <input id="fakeInput" type="checkbox" />
+      <button className={styles.desk} ><Link href="mailto:yohananchris@outlook.com">GET AN INVITE</Link></button>
+
+      <span className={styles.refSpan} ></span>
+
+      <label className={`${styles.mob} ${styles.hamburger}`}>
+        <input className={styles.fakeInput} type="checkbox" />
         <div></div>
         <div></div>
         <div></div>
       </label>
-       <section>
-        <label htmlFor="fakeBack">
-          <input id="fakeBack" type="checkbox" />
-        </label>
+
+      <section className={styles.mobMenu}>
+        <div>
+        </div>
         <ul >
           <li className={current == "stories" ? styles.active : ''} onClick={() => setCurrent("stories")}>
             <Link href="/stories">STORIES</Link>
@@ -49,7 +56,7 @@ export default function Navbar() {
             <Link href="/pricing">PRICING</Link>
           </li>
         </ul>
-      </section> */}
+      </section>
     </nav>
   );
 }

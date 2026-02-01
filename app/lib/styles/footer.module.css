@@ -1,0 +1,127 @@
+.footer {
+  width: 100%;
+  background: var(--black);
+  padding: 2rem 6vw;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.footer .left div, 
+.footer .right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer .logo {
+  display: block;
+  filter: invert(100%);
+  margin-bottom: 3rem;
+}
+
+.footer .right {
+  width: 100%;
+}
+
+.footer ul {
+  list-style-type: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.footer ul li {
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+
+    background: linear-gradient(to top right, var(--pastelOrange), var(--violet), var(--blue)) no-repeat;
+    background-clip: text;
+    color: var(--white);
+    background-size: 0;
+    
+    font-weight: 700;
+    transition: all 0.7s linear;
+}
+
+.footer ul li a:hover, .footer ul .active a {
+    color: transparent;
+    background-size: 100%;
+}
+
+.footer ul li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.footer .right > div {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.invite span {
+  font-size: 0.8rem;
+  margin-right: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.invite a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.invite img {
+  transition: all 0.4s linear;
+}
+
+.invite:hover {
+  cursor: pointer;
+}
+
+.invite:hover img {
+  transform: translateX(100%);
+}
+
+.footer .right .invite {
+  margin-bottom: 3rem;
+}
+
+.footer .invite img {
+  filter: invert(100%);
+}
+
+.footer .right p {
+  color: var(--darkgrey);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 700px) { 
+
+  .footer, .footer .right {
+    flex-direction: column;
+  }
+
+  .footer .right {
+    row-gap: 3rem;
+    align-items: center;
+  }
+
+  .footer .right ul li {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer .right > div {
+    align-items: center;
+  }
+
+}
