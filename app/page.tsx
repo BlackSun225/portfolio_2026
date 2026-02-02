@@ -1,61 +1,88 @@
-// import Image from "next/image";
+import journey from "../public/journey.jpg";
+import arrow from "../public/arrow.svg";
+import discover from "../public/discover.jpg";
+import hardworker from "../public/hard_worker.jpg";
+import photograph from "../public/photograph.jpg";
+import capturesmall from "../public/capture.jpg";
+import watersmall from "../public/water.jpg";
+import catchIdeaSmall from "../public/catch_idea.jpg";
+
+import responsive from "../public/responsive.svg";
+import noLimit from "../public/no-limit.svg";
+import embed from "../public/embed.svg";
+import Image from "next/image";
+import styles from "@/app/lib/styles/home.module.css";
+import Link from "next/link";
+import GradientSection from "./components/gradientSection";
+
 
 export default function Home() {
+  const sectionOneTitle = "CREATE AND SHARE YOUR PHOTO STORIES";
+  const sectionOneParagraph = `Photosnap is a platform for photographers and visual storytellers. 
+  We make it easy to share photos, tell stories and connect with others.`
+
   return (
-    <div>
-      <main>
-        {/* <Image
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div >
-          <h1 >
-            To get started, edit the page.tsx file.
-          </h1>
-          <p >
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <GradientSection title={sectionOneTitle} paragraph={sectionOneParagraph} imagePath={journey} invite={true} />
+      <section className={styles.two}>
+        <div className={styles.left}>
+          <Image src={discover} alt="" />
+        </div>
+        <div className={styles.right}>
+          <h1>BEAUTIFUL STORIES EVERY TIME</h1>
+          <p>We provide design templates href ensure your stories look terrific. Easily add photos, 
+            text, embed maps and media from other networks. Then share your story with everyone.
+          </p>
+          <Link href="/stories" className={styles.invite} >
+            <span>VIEW THE STORIES</span>
+            <Image alt="" src={arrow} />
+          </Link>
+        </div>
+      </section>
+      <section className={styles.three}>
+        <div className={styles.left}>
+          <h1>DESIGNED FOR EVERYONE</h1>
+          <p>Photosnap can help you create stories that resonate with your audience. Our tool is 
+            designed for photographers of all levels, brands, business you name it.
+          </p>
+          <Link href="/stories" className={styles.invite}>
+            <span>VIEW THE STORIES</span>
+            <Image alt="" src={arrow} />
+          </Link>
+        </div>
+        <div className={styles.right}>
+          <Image alt="" src={hardworker} />
+        </div>
+      </section>
+      <section className={styles.discover}>
+        {/* <Card parentRef="" imagePathPortrait={photograph} title="Photograph of the world" author="Chris" handleClick={() => window.location.href = "http://localhost:5173/stories"} />
+        <Card parentRef="" imagePathPortrait={capturesmall} title="Photograph of the world" author="Chris" handleClick={() => window.location.href = "http://localhost:5173/stories"} />
+        <Card parentRef="" imagePathPortrait={watersmall} title="Photograph of the world" author="Chris" handleClick={() => window.location.href = "http://localhost:5173/stories"} />
+        <Card parentRef="" imagePathPortrait={catchIdeaSmall} title="Photograph of the world" author="Chris" handleClick={() => window.location.href = "http://localhost:5173/stories"} /> */}
+      </section>
+      <section className={styles.pros}>
+        <div className={styles.box}>
+          <Image src={responsive} alt="" />
+          <h2>100% Responsive</h2>
+          <p>{`No matter which the device you're on, our site is fully responsive and stories look 
+            beautiful on any screen.`}
           </p>
         </div>
-        <div >
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div> */}
-      </main>
-    </div>
+        <div className={styles.box}>
+          <Image src={noLimit} alt="" />
+          <h2>No Photo Upload Limit</h2>
+          <p>Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all 
+            of your stories in one go.
+          </p>
+        </div>
+        <div className={styles.box}>
+          <Image src={embed} alt="" />
+          <h2>Available href Embed</h2>
+          <p>Embed Tweets, Facebook posts, Instagram media, Vimeo or Youtube videos, Googles Maps, 
+            and more.
+          </p>
+        </div>
+      </section>
+    </>
   );
 }

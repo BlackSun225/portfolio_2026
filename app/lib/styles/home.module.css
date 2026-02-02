@@ -1,0 +1,173 @@
+
+.invite {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.invite a {
+  color: white;
+  text-decoration: none;
+}
+
+.invite span {
+  font-size: 0.85rem;
+  margin-right: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.invite img {
+  transition: all 0.4s linear;
+}
+
+.invite:hover {
+  cursor: pointer;
+}
+
+.invite:hover img {
+  transform: translateX(100%);
+}
+
+.two .invite , .three .invite {
+  color: var(--black);
+}
+
+.two .invite img , .three .invite img {
+  filter: none;
+}
+
+
+.two h1, 
+.three h1 {
+  color: var(--white);
+  font-size: clamp(1rem, 2.5vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.two p, 
+.three p {
+  color: var(--darkgrey);
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  margin: 1.5rem 0;
+}
+
+.three .right {
+  width: 53%;
+}
+
+.three .right img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.two, 
+.three {
+  display: flex;
+  background: var(--white);
+}
+
+.two .left {
+  width: 53%;
+}
+
+.two .left img {
+  width: 100%;
+  height: 100%;
+}
+
+.two .right, 
+.three .left {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3dvh 0.6dvh 5dvw;
+  margin: 8dvw 0;
+}
+
+.two h1,  .three h1 {
+  color: var(--black);
+}
+
+.discover {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 50vw), 1fr));
+}
+
+.pros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
+  padding: 2.5rem 5vw;
+  /* padding: 5rem 0; */
+}
+
+.pros .box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pros .box img {
+  display: block;
+  width: 80px;
+}
+
+.pros .box h2 {
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+.pros .box h2, 
+.pros .box p {
+  text-align: center;
+}
+
+.pros .box p {
+  color: var(--darkgrey);
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
+}
+
+
+@media only screen and (max-width: 800px) {
+
+  .two {
+    flex-direction: column;
+  }
+
+  .three {
+    flex-direction: column-reverse;
+  }
+
+  .two .left, .two .right, .three .left, .three .right {
+    width: 100%;
+    flex: 1;
+  }
+
+  .two h1, 
+  .three h1 {
+   font-size: clamp(1.3rem, 5vw, 2.2rem);
+  }
+
+  .two p, 
+  .three p {
+    font-size: clamp(1rem, 2.2vw, 1.7rem);
+  }
+
+}
+
+
+@media only screen and (max-width: 650px) {
+
+  .pros {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+}
