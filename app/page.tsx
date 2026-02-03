@@ -14,6 +14,7 @@ import Image from "next/image";
 import styles from "@/app/lib/styles/home.module.css";
 import Link from "next/link";
 import GradientSection from "./components/gradientSection";
+import Card from "./components/card";
 
 
 export default function Home() {
@@ -55,10 +56,10 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.discover}>
-        {/* <Card parentRef="" imagePathPortrait={photograph} title="Photograph of the world" author="Chris" handleClick={() => window.location.href = "http://localhost:5173/stories"} />
-        <Card parentRef="" imagePathPortrait={capturesmall} title="Photograph of the world" author="Chris" handleClick={() => window.location.href = "http://localhost:5173/stories"} />
-        <Card parentRef="" imagePathPortrait={watersmall} title="Photograph of the world" author="Chris" handleClick={() => window.location.href = "http://localhost:5173/stories"} />
-        <Card parentRef="" imagePathPortrait={catchIdeaSmall} title="Photograph of the world" author="Chris" handleClick={() => window.location.href = "http://localhost:5173/stories"} /> */}
+        <Card imagePathPortrait={photograph} title="Photograph of the world" author="Chris" clickPath="/stories" />
+        <Card imagePathPortrait={capturesmall} title="Photograph of the world" author="Chris" clickPath="/stories" />
+        <Card imagePathPortrait={watersmall} title="Photograph of the world" author="Chris" clickPath="/stories" />
+        <Card imagePathPortrait={catchIdeaSmall} title="Photograph of the world" author="Chris" clickPath="/stories" />
       </section>
       <section className={styles.pros}>
         <div className={styles.box}>
