@@ -1,5 +1,9 @@
 import arrow from "@/public/arrow.svg";
+
+import Cta from "./cta";
+
 import styles from "../lib/styles/gradientSection.module.css";
+
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
@@ -18,11 +22,7 @@ export default function GradientSection({
             <h1>{title}</h1>
             <p>{paragraph}</p>
 
-            {invite ?
-            <Link className={styles.invite} href="mailto:yohananchris@outlook.com">
-                <span>GET AN INVITE</span>
-                <Image alt="" src={arrow} />
-            </Link> : null}
+            {invite ? <Cta /> : null}
           </div>
 
         </div>

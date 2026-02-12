@@ -1,3 +1,5 @@
+"use client"
+
 import journey from "../public/journey.jpg";
 import arrow from "../public/arrow.svg";
 import discover from "../public/discover.jpg";
@@ -10,11 +12,15 @@ import catchIdeaSmall from "../public/catch_idea.jpg";
 import responsive from "../public/responsive.svg";
 import noLimit from "../public/no-limit.svg";
 import embed from "../public/embed.svg";
-import Image from "next/image";
+
 import styles from "@/app/lib/styles/home.module.css";
+import Image from "next/image";
 import Link from "next/link";
 import GradientSection from "./components/gradientSection";
 import Card from "./components/card";
+
+import { useEffect, useContext } from "react";
+import { RouteContext } from "./components/navContext";
 
 
 export default function Home() {
@@ -22,12 +28,13 @@ export default function Home() {
   const sectionOneParagraph = `Photosnap is a platform for photographers and visual storytellers. 
   We make it easy to share photos, tell stories and connect with others.`
 
+
   return (
     <>
       <GradientSection title={sectionOneTitle} paragraph={sectionOneParagraph} imagePath={journey} invite={true} />
       <section className={styles.two}>
         <div className={styles.left}>
-          <Image src={discover} alt="" />
+          <Image className={styles.img} src={discover} alt="" />
         </div>
         <div className={styles.right}>
           <h1>BEAUTIFUL STORIES EVERY TIME</h1>

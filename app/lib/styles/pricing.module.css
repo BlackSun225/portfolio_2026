@@ -1,0 +1,181 @@
+
+.pricing {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 3vw 6vw;
+}
+
+.switchDiv {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2vw 0 3rem 0;
+}
+
+.switchDiv > span {
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.4s linear;
+}
+
+.inactiveBill {
+  color: var(--darkgrey);
+}
+
+.switch {
+  width: 50px;
+  height: 26px;
+  border-radius: 15px;
+  background: var(--grey);
+  padding: 3px;
+  cursor: pointer;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--black);
+  transition: all 0.4s linear;
+}
+
+.priceList {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.price {
+  width: 300px;
+  padding: 1.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--grey);
+}
+
+.price h2,
+.price p, 
+.price div, 
+.price span {
+  text-align: center;
+}
+
+.price h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem auto;
+}
+
+.price p {
+  color: var(--darkgrey);
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.price div {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.4s linear;
+}
+
+.price span {
+  font-size: 0.8rem;
+  transition: all 0.4s linear;
+  font-weight: 600;
+  color: var(--darkgrey);
+  margin-bottom: 2.4rem;
+}
+
+.price button {
+  display: block;
+  width: 100%;
+  padding: 0.4rem 0;
+  background: var(--black);
+  color: var(--white);
+  font-weight: 500;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  border: 2px solid black;
+}
+
+.price button:hover {
+  background: var(--white);
+  color: var(--black);
+  font-weight: 600;
+  transition: all 0.5s linear;
+}
+
+.pro {
+  background: var(--black);
+  position: relative;
+}
+
+.pro h2 {
+  color: var(--white);
+}
+
+.pro p {
+  margin-bottom: 2.8rem;
+}
+
+.pro div {
+  color: var(--white);
+}
+
+.pro button {
+  color: var(--white);
+  padding: 0.7rem;
+  background: var(--white);
+  color: var(--black);
+  font-weight: 600;
+  border: 2px solid black;
+}
+
+.pro button:hover {
+  background: var(--black);
+  color: var(--white);
+  font-weight: 600;
+  transition: all 0.5s linear;
+  border: 2px solid white;
+}
+
+.pro::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to top right, var(--pastelOrange), var(--violet), var(--blue));
+}
+
+.h3 {
+  margin: 5rem 0 2rem 0;
+}
+
+
+@media only screen and (max-width: 800px) {
+  .priceList {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .price {
+    width: 100%;
+  }
+
+  .price p {
+    margin-bottom: 1rem;
+  }
+
+  .price span {
+    margin-bottom: 1.4rem;
+  }
+}

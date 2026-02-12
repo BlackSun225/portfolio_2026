@@ -1,0 +1,26 @@
+.invite {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.invite span {
+  font-size: 0.9rem;
+  margin-right: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.invite img {
+  transition: all 0.4s linear;
+  filter: invert(100%);
+}
+
+.invite:hover {
+  cursor: pointer;
+}
+
+.invite:hover img {
+  transform: translateX(100%);
+}

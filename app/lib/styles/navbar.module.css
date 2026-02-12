@@ -8,6 +8,16 @@
   position: relative;
 }
 
+.imgContainer {
+  width: 150px;
+  height: 15px;
+  position: relative;
+}
+
+.imgContainer > img {
+  width: 100%;
+}
+
 .nav ul {
   list-style-type: none;
   display: flex;
@@ -40,7 +50,7 @@
   background-size: 100%;
 }
 
-.nav button {
+.nav .btn {
   padding: 0.5rem 1.2rem;
   background: var(--black);
   font-size: 0.85rem;
@@ -50,21 +60,15 @@
   font-weight: 500;
   border: 2px solid var(--black);
   transition: all 0.5s linear;
-}
-
-.nav button a {
   text-decoration: none;
   color: white;
 }
 
-.nav button:hover {
+.nav .btn:hover {
   background: var(--white);
   font-weight: 600;
   transition: all 0.7s linear;
-}
-
-.nav button:hover a {
-  color: var(--black);
+    color: var(--black);
 }
 
 .refSpan {

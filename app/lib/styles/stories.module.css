@@ -1,0 +1,348 @@
+html {
+  scroll-behavior: smooth;
+  transition: all linear 1s;
+}
+
+/* .stories {
+  padding-top: 6rem;
+} */
+
+/* .screen {
+  position: relative;
+  width: 0%;
+  aspect-ratio: 16/9;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  transition: all ease-in 0.7s;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.screenText {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0 min(4rem, 5vw);
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+}
+
+.screenText h1, .screenText > p {
+  width: 100%;
+}
+
+.screenText h1 {
+  color: var(--white);
+  font-size: min(1.7rem, 5.7vw);
+  margin: min(1.5rem, 1vh) 0;
+  font-weight: 600;
+}
+
+.screenText p {
+  color: var(--grey);
+  font-size: clamp(0.7rem, 2vw, 1rem);
+  font-weight: 500;
+  text-shadow: 0 0 5px var(--black);
+}
+
+.screenText > p {
+  max-height: 60%;
+  overflow: auto;
+  padding: 1rem 0;
+}
+
+.dateAndAuthor {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: min(1.5rem, 2vh);
+}
+
+.screenText strong {
+  color: rgb(249, 249, 249);
+  font-size: clamp(0.7rem, 2vw, 1rem);
+} */
+
+.gallery {
+  width: 100%;
+  min-height: calc(100dvh - 6rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(325px, 50vw), 1fr));
+}
+
+/* .emptyGallery {
+  display: grid;
+  height: calc(100dvh - 15rem);
+  place-items: center;
+}
+
+.waiting {
+  width: 100%;
+  height: calc(100vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.waiting img {
+  display: block;
+  width: 150px;
+}
+
+.action {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 4rem;
+  background-image: linear-gradient(to right, var(--pastelOrange), var(--violet), var(--blue));
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+}
+
+.actionChild {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4rem;
+  height: 4rem;
+  transform: translate(-50%, -50%);
+  border-radius: 4rem;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;  
+  line-height: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.actionChild img {
+  width: 50%;
+  filter: drop-shadow(0 0 2px rgb(0, 0, 0));
+  transition: all linear 0.5s;
+}
+
+.actionChild:hover img {
+  transform: scale(120%);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(7px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal h1 {
+  font-size: 1.1rem;
+}
+
+.hideBtn {
+  display: block;
+  width: 1.2rem;
+  cursor: pointer;
+}
+
+.modal form {
+  width: 100%;
+  max-width: 500px;
+  max-height: 90%;
+  border-radius: 15px;
+  background: var(--white);
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.requestModal {
+  width: 100%;
+  max-width: 225px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  background: var(--white);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.366);
+  gap: 1.5rem;
+}
+
+.requestModal img {
+  width: 60px;
+}
+
+.requestModal p {
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.modal form h2 {
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+  color: var(--blue);
+}
+
+.modal form > div:not(:first-of-type) {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formHeader {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal input , .modal .inputStory {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  background: var(--white);
+  outline: none;
+  border: 2px solid;
+  border-color: var(--pastelOrange);
+  margin: 1rem 0 0.3rem;
+}
+
+.modal input:focus , .modal .inputStory:focus {
+  border: 2px solid;
+  border-image: linear-gradient(to right, var(--pastelOrange), var(--violet), var(--blue)) 1;
+}
+
+
+.modal .inputStory {
+  height: 7rem;
+  resize: none;
+}
+
+.modal strong, .modal p {
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.alert, .error {
+  color: red
+}
+
+.alert {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all linear 0.5s;
+}
+
+.modal p {
+  margin-top: 0.7rem;
+}
+
+.advice {
+  color: green;
+}
+
+
+.stories .imagesTitles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+} 
+
+.modal form .images {
+  align-self: normal;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portrait {
+  width: 30%;
+  aspect-ratio: 3/4;
+  position: relative;
+}
+
+.landscape {
+  width: 65%;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+.portrait img, .portraitDash img, .landscape img, .landscapeDash img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.submitBtn, .nextBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  color: var(--white);
+  background: linear-gradient(to right, var(--pastelOrange), var(--violet), var(--blue));
+}
+
+.submitBtn:hover , .nextBtn:hover {
+  box-shadow: 0 0 15px var(--pastelOrange);
+}
+
+.nextBtn {
+  align-self: center;
+  margin-top: 1.5rem;
+}
+
+.formAction {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.cancelBtn {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: none;
+  color: var(--blue);
+  font-weight: 600;
+  background: var(--white);
+  border: 2px solid var(--blue);
+}
+
+.cancelBtn:hover {
+  box-shadow: 0 0 15px var(--blue);
+} */
+
+
+@media only screen and (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(min(170px, 50vw), 1fr));
+  }
+}

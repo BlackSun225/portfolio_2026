@@ -1,0 +1,70 @@
+.features .pros {
+  padding: 5vw 6vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem 1rem;
+}
+
+.pros .box {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pros .box .img {
+  display: block;
+  width: 80px;
+}
+
+.pros .box h2 {
+  font-size: 0.9rem;
+  margin: 1rem 0;
+}
+
+.pros .box h2, 
+.pros .box p {
+  text-align: center;
+}
+
+.pros .box p {
+  color: var(--darkgrey);
+  font-size: clamp(0.8rem, 1.6vw, 1.1rem);
+}
+
+.invite {
+  display: flex;
+  align-items: center;
+}
+
+.invite span {
+  font-size: 0.8rem;
+  margin-right: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.invite .img {
+  transition: all 0.4s linear;
+  filter: invert(100%);
+}
+
+.invite:hover {
+  cursor: pointer;
+}
+
+.invite:hover .img {
+  transform: translateX(100%);
+}
+
+
+@media only screen and (max-width: 700px) {
+
+  .features .pros {
+    padding: 5vw 6vh;
+    grid-template-columns: repeat(auto-fill, minmax(min(275px, 50dvw), 1fr));;
+  }
+
+}

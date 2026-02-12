@@ -11,7 +11,7 @@ export default function Card({
 }: {
     clickPath: string,
     keyId?: string,
-    imagePathPortrait: StaticImageData,
+    imagePathPortrait: StaticImageData | string,
     date?: string,
     parentRef?: string,
     title: string,
@@ -20,7 +20,7 @@ export default function Card({
 
   return (
     <Link href={clickPath} className={`${parentRef && parentRef == keyId ? styles.activeCard : ''} ${styles.card}`} >
-      <Image className={styles.img} alt="" src={imagePathPortrait} />
+      <Image priority fill className={styles.img} alt="" src={imagePathPortrait} />
       <div className={styles.infos}>
         <strong>{date ? new Date(date).toDateString() : ""}</strong>
         <h1>{title.toString()}</h1>
