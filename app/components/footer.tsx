@@ -1,20 +1,20 @@
 "use client"
 
-import arrow from "@/public/arrow.svg";
+// import arrow from "@/public/arrow.svg";
 import twitter from "@/public/twitter.svg";
 import instagram from "@/public/instagram.svg";
 import youtube from "@/public/youtube.svg";
-import pinterest from "@/public/pinterest.svg";
+// import pinterest from "@/public/pinterest.svg";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../lib/styles/footer.module.css";
-import { RouteContext, keepRoutePath } from "./navContext";
-import { useContext } from "react";
+import { RouteContext} from "./navContext";
+import { useContext} from "react";
 
 import Cta from "./cta";
 
 export default function Footer() {
-  const {current, setCurrent} = useContext(RouteContext);
+  const {current} = useContext(RouteContext);
   
   return (
     <footer className={styles.footer}>
@@ -31,23 +31,13 @@ export default function Footer() {
       </div>
       <div className={styles.right}>
         <ul>
-            <li className={current == "stories" ? styles.active : ''} onClick={() => {
-              setCurrent("stories");
-              keepRoutePath("stories");
-              }}>
+            <li className={current == "stories" ? styles.active : ''} >
               <Link href="/stories">STORIES</Link>
             </li>
-            <li className={current == "features"  ? styles.active : ''} onClick={() => {
-              setCurrent("features");
-              keepRoutePath("features");
-              }}>
+            <li className={current == "features"  ? styles.active : ''} >
               <Link href="/features">FEATURES</Link>
             </li>
-            <li className={current == "pricing"  ? styles.active : ''} onClick={() => {
-              setCurrent("pricing");
-              keepRoutePath("pricing");
-              }
-            }>
+            <li className={current == "pricing"  ? styles.active : ''} >
               <Link href="/pricing">PRICING</Link>
             </li>
         </ul>

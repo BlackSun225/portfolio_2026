@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../lib/styles/navbar.module.css";
-import { RouteContext, keepRoutePath } from "./navContext";
+import { RouteContext} from "./navContext";
 import { usePathname, useRouter } from "next/navigation";
 
 // eslint-disable-next-line react/prop-types
@@ -13,39 +13,23 @@ export default function Navbar() {
   const path = usePathname();
   const {current, setCurrent} = useContext(RouteContext);
 
-
   useEffect(() => {
-    console.log("routepath : ", path);
-    console.log(" current value is : ", current);
-    
-  }, [current])
+    setCurrent(path.slice(1));
+  }, []);
 
   return (
     <nav className={styles.nav}>
       <Link className={styles.imgContainer} href="/">
-        <Image fill loading="eager" alt="" src="/logo.svg" onClick={() => {
-          setCurrent("");
-          keepRoutePath("");
-          }} /> 
+        <Image fill loading="eager" alt="" src="/logo.svg" /> 
       </Link>
       <ul className={styles.desk} >
-        <li className={current == "stories" ? styles.active : ''} onClick={() => {
-          setCurrent("stories");
-          keepRoutePath("stories");
-          }}>
+        <li className={current == "stories" ? styles.active : ''} >
           <Link href="/stories">STORIES</Link>
         </li>
-        <li className={current == "features"  ? styles.active : ''} onClick={() => {
-          setCurrent("features");
-          keepRoutePath("features");
-          }}>
+        <li className={current == "features"  ? styles.active : ''} >
           <Link href="/features">FEATURES</Link>
         </li>
-        <li className={current == "pricing"  ? styles.active : ''} onClick={() => {
-          setCurrent("pricing");
-          keepRoutePath("pricing");
-          }
-        }>
+        <li className={current == "pricing"  ? styles.active : ''} >
           <Link href="/pricing">PRICING</Link>
         </li>
       </ul>
@@ -64,25 +48,13 @@ export default function Navbar() {
         <div>
         </div>
         <ul >
-          <li className={current == "stories" ? styles.active : ''} onClick={() => {
-            setCurrent("stories");
-            keepRoutePath("stories");
-            }
-          }>
+          <li className={current == "stories" ? styles.active : ''} >
             <Link href="/stories">STORIES</Link>
           </li>
-          <li className={current == "features" ? styles.active : ''} onClick={() => {
-            setCurrent("features");
-            keepRoutePath("features");
-            }
-          }>
+          <li className={current == "features" ? styles.active : ''} >
             <Link href="/features">FEATURES</Link>
           </li>
-          <li className={current == "pricing" ? styles.active : ''} onClick={() => {
-            setCurrent("pricing");
-            keepRoutePath("pricing");
-            }
-          }>
+          <li className={current == "pricing" ? styles.active : ''} >
             <Link href="/pricing">PRICING</Link>
           </li>
         </ul>
