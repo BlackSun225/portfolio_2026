@@ -14,8 +14,9 @@ export default function Navbar() {
   const {current, setCurrent} = useContext(RouteContext);
 
   useEffect(() => {
+    console.log("path is : ", path);
     setCurrent(path.slice(1));
-  }, []);
+  }, [path]);
 
   return (
     <nav className={styles.nav}>
