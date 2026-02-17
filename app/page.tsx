@@ -1,9 +1,13 @@
 "use client"
 
-import journey from "../public/journey.jpg";
+import african_future from "../public/african_future.jpg";
+import leaf from "@/public/leaf.jpg";
+import olive from "@/public/olive.jpg";
 import arrow from "../public/arrow.svg";
+
 import discover from "../public/discover.jpg";
 import hardworker from "../public/hard_worker.jpg";
+
 import photograph from "../public/photograph.jpg";
 import capturesmall from "../public/capture.jpg";
 import watersmall from "../public/water.jpg";
@@ -31,10 +35,10 @@ export default function Home() {
 
   return (
     <>
-      <GradientSection title={sectionOneTitle} paragraph={sectionOneParagraph} imagePath={journey} invite={true} />
+      <GradientSection title={sectionOneTitle} paragraph={sectionOneParagraph} imagePath={african_future} invite={true} />
       <section className={styles.two}>
         <div className={styles.left}>
-          <Image className={styles.img} src={discover} alt="" />
+          <Image className={styles.img} src={olive} alt="" />
         </div>
         <div className={styles.right}>
           <h1>BEAUTIFUL STORIES EVERY TIME</h1>
@@ -59,7 +63,7 @@ export default function Home() {
           </Link>
         </div>
         <div className={styles.right}>
-          <Image alt="" src={hardworker} />
+          <Image alt="" src={leaf} />
         </div>
       </section>
       <section className={styles.discover}>

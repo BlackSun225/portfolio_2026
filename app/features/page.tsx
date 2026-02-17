@@ -1,12 +1,17 @@
 "use client"
 
+
 import responsive from "@/public/responsive.svg";
 import noLimit from "@/public/no-limit.svg";
 import embed from "@/public/embed.svg";
 import customDomain from "@/public/custom-domain.svg";
 import exposure from "@/public/boost-exposure.svg";
 import drag from "@/public/drag-drop.svg";
+
+import leaf from "@/public/leaf.jpg";
+import tree from "@/public/tree.jpg";
 import discover from "@/public/discover.jpg";
+import craftmanship from "@/public/craftmanship.jpg";
 
 import { useEffect, useContext } from "react";
 
@@ -23,7 +28,7 @@ export default function Features() {
 
     return (
         <div className={styles.features}>
-            <GradientSection title={sectionTitle} paragraph={sectionParagraph} imagePath={discover} invite={false} />
+            <GradientSection title={sectionTitle} paragraph={sectionParagraph} imagePath={craftmanship} invite={false} />
             <section className={styles.pros}>
                 <div className={styles.box}>
                     <Image className={styles.img} src={responsive} alt="" />

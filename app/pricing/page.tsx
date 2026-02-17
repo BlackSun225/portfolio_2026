@@ -2,9 +2,8 @@
 import { useState } from "react";
 import { RouteContext } from "../components/navContext";
 
-import photo from "@/public/photo.jpg";
-import check from "@/public/check.svg";
-
+import craftmanship from "@/public/craftmanship.jpg";
+import happy from "@/public/happy.jpg"
 
 import GradientSection from "../components/gradientSection";
 import Attract from "../components/attract";
@@ -19,7 +18,7 @@ export default function Pricing() {
 
     return (
         <>
-            <GradientSection title="PRICING" paragraph={sectionParagraph} imagePath={photo} invite={false} />
+            <GradientSection title="PRICING" paragraph={sectionParagraph} imagePath={happy} invite={false} />
             <section className={styles.pricing}></section>
             <Attract />
         </> 

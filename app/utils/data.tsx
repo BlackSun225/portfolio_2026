@@ -1,4 +1,18 @@
 export const dictionary = {
+    navbar: {
+        stories: {
+            fr: "PROJETS",
+            en: "WORK"
+        },
+        features: {
+            fr: "SERVICES",
+            en: "SERVICES"
+        },
+        pricing: {
+            fr: "TARIFS",
+            en: "PRICING"
+        }
+    },
     home: {
 
     },

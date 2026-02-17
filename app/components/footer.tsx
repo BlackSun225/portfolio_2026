@@ -3,7 +3,8 @@
 // import arrow from "@/public/arrow.svg";
 import twitter from "@/public/twitter.svg";
 import instagram from "@/public/instagram.svg";
-import youtube from "@/public/youtube.svg";
+import linkedIn from "@/public/linkedin.png";
+import tiktok from "@/public/tiktok.png";
 // import pinterest from "@/public/pinterest.svg";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,6 +13,7 @@ import { RouteContext} from "./navContext";
 import { useContext} from "react";
 
 import Cta from "./cta";
+import { link } from "fs";
 
 export default function Footer() {
   const {current} = useContext(RouteContext);
@@ -24,9 +26,9 @@ export default function Footer() {
         </Link>
         <div>
           {/* <Link href="https://www.pinterest.com"><Image src={pinterest} alt="" /></Link> */}
-          <Link href="https://www.x.com"><Image src={twitter} alt="" /></Link>
-          <Link href="https://www.youtube.com"><Image src={youtube} alt="" /></Link>
-          <Link href="https://www.instagram.com"><Image src={instagram} alt="" /></Link>        
+          <Link href="https://www.tiktok.com"><Image src={tiktok} width="22" alt="" /></Link> 
+          <Link href="https://www.linkedin.com"><Image src={linkedIn} width="20" alt="" /></Link>
+          <Link href="https://www.x.com"><Image src={twitter} alt="" /></Link>      
         </div>
       </div>
       <div className={styles.right}>
