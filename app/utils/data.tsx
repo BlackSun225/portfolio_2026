@@ -9,7 +9,7 @@ export const dictionary = {
             en: "SERVICES"
         },
         pricing: {
-            fr: "TARIFS",
+            fr: "TARIF",
             en: "PRICING"
         }
     },
@@ -19,31 +19,32 @@ export const dictionary = {
     features: {
         gradient: {
             h1: {
-                fr: "Les avantages de mon accompagnement",
-                en: ""
+                fr: "Mes Services",
+                en: "My Services"
             },
             p: {
-                fr: `Avec moi, un projet vague, une idée brute, deviendra un projet cadré 
-                et réaliste reposant sur un cahier de charge orienté objectif à court, 
-                moyen et long therme.`,
+                fr: `Je conseil, j'oriente, je transforme vos idées en projet et je conçois des solutions efficientes à partir d'un cahier 
+                de charges orienté objectif.`,
                 en: ""
             }
         },
         testimonial: {
-            fr: `Une porteuse de projet m'avais demandé du conseil. Elle avait une belle idée
-             et voulait une application qui (selon ses connaissances et le résultat de ses recherches), 
-             lui aurait coûté entre 3500 et 5000euro. Je lui ai expliqué que ce projet, 
-             qui était certes beau et utile, lui couterait plus cher. Je lui ai révélé des frais 
-             cachés qui lui auraient coûté au moins 300euro (200.000fcfa) par mois pour la réussite du projet.
+            fr: `Une porteuse de projet a économisé plus de 2.000.000fcfa (3000euro) grâce à mon accompagnement.
 
-            Sachant qu'il faut parfois plus de 10 mois pour qu'un projet soit rentable, 
-            la dame aurait dépensé plus de 3000euro (2 millions de fcfa) en plus du prix de l'application.
+                Elle avait une idée et voulait une application. Mais la technologie qu'elle voulait utiliser lui couterait plus cher qu'il n'y parait.
+                Sans compter les frais annexes liés au projet en lui même.
 
-            En s'offrant un accompagnement de moins de 100euro (65000fcfa) pour une heure de conseil, 
-            nous avons réévalué le coût du projet et évité un imprévu de plus de 3000euro (2 millions de fcfa).
+                Je lui ai révélé ces frais cachés, j'ai mis en évidence certaines contraintes invisibles qui auraient nécessité des moyens supplémentaires.
 
-            Je ne me contente pas de vendre des applications, j'assiste, je conseil, je propose des solutions.`,
-            en: ""
+                On parle d'une augmentation de plus de 100% du budget initial pour la conception.
+
+                En s'offrant un accompagnement de moins de 100euro (65000fcfa) pour une heure de conseil, 
+                nous avons réévalué le coût du projet et évité un imprévu de plus de 3000euro (2.000.000fcfa).
+
+                Je ne me contente pas de vendre des applications, je conseil, j'oriente, et je propose des solutions efficientes.`,
+            en: `
+            
+            `
         },
         box1: {
             h2: {
