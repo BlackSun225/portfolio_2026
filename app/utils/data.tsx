@@ -48,51 +48,66 @@ export const dictionary = {
         },
         box1: {
             h2: {
-                fr: "identifier le projet adapté à vos objectifs",
+                fr: "Accompagnement personnalisé",
                 en: ""
             },
             p: {
-                fr: "",
+                fr: `Je vous accompagnerai pour: choisir la solution adaptée à votre projet, choisir les fonctionalités, technologies qui 
+                apporteront un plus financièrement et qualitativement. `,
                 en: ""
             }
         },
         box2: {
             h2: {
-                fr: "les avantages et les inconvenients à chaque décision",
+                fr: "Conception d'application",
                 en: ""
             },
             p: {
-                fr: "",
+                fr: "Application web, mobile ou desktop",
                 en: ""
             }
         },
         box3: {
             h2: {
-                fr: "révéler des frais cachés, des dépenses supplémentaires imprévues",
+                fr: "Présence en ligne ",
                 en: ""
             },
             p: {
-                fr: "",
+                fr: `Apparaitre dans les résultats de recherche, être visible sur google maps et ou sur les réseaux sociaux adaptés à votre audience.`,
                 en: ""
             }
         },
         box4: {
             h2: {
-                fr: "interface conforme à la maquette",
+                fr: "Formation",
                 en: ""
             },
             p: {
-                fr: "",
+                fr: `Utiliser les réseaux sociaux pour obtenir les bonnes informations et trouver les bons mots clés. 
+                Initier vos enfants à la programmation de manière ludique. 
+                Découvrir et prendre en main des outils pour améliorer votre productivité. `,
                 en: ""
             }
         },
         box5: {
             h2: {
-                fr: "accompagnement personnalisé",
+                fr: "Conception de site web responsive",
                 en: ""
             },
             p: {
-                fr: "",
+                fr: `Je conçois des sites web responsive, conformes aux maquettes, 
+                qui permettent un affichage optimal des informations sur un écran d'ordinateur, de tablette et de smartphone.`,
+                en: ""
+            }
+        },
+        box6: {
+            h2: {
+                fr: "Déploiement",
+                en: ""
+            },
+            p: {
+                fr: `Vous avez une application ou une site web que vous souhaiter mettre en ligne, 
+                une application mobile android à mettre sur le playstore ? Contactez-moi`,
                 en: ""
             }
         }
