@@ -4,14 +4,17 @@ import { useEffect, useContext, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../lib/styles/navbar.module.css";
-import { RouteContext} from "./navContext";
+import { RouteContext, LangContext} from "./navContext";
 import { usePathname, useRouter } from "next/navigation";
+import { dictionary } from "../utils/data";
+import Cta from "./cta";
 
 // eslint-disable-next-line react/prop-types
 export default function Navbar() {
 
   const path = usePathname();
   const {current, setCurrent} = useContext(RouteContext);
+  const {lang} = useContext(LangContext);
 
   useEffect(() => {
     console.log("path is : ", path);
@@ -25,16 +28,16 @@ export default function Navbar() {
       </Link>
       <ul className={styles.desk} >
         <li className={current == "stories" ? styles.active : ''} >
-          <Link href="/stories">STORIES</Link>
+          <Link href="/stories">{dictionary.navbar.stories[lang]}</Link>
         </li>
         <li className={current == "features"  ? styles.active : ''} >
-          <Link href="/features">FEATURES</Link>
+          <Link href="/features">{dictionary.navbar.features[lang]}</Link>
         </li>
         <li className={current == "pricing"  ? styles.active : ''} >
-          <Link href="/pricing">PRICING</Link>
+          <Link href="/pricing">{dictionary.navbar.pricing[lang]}</Link>
         </li>
       </ul>
-      <Link className={`${styles.desk} ${styles.btn}`} href="mailto:yohananchris@outlook.com">COLLABORONS</Link>
+      <Link className={`${styles.desk} ${styles.btn}`} href="mailto:yohananchris@outlook.com">{dictionary.actionButton[lang]}</Link>
 
       <span className={styles.refSpan} ></span>
 
@@ -50,13 +53,13 @@ export default function Navbar() {
         </div>
         <ul >
           <li className={current == "stories" ? styles.active : ''} >
-            <Link href="/stories">STORIES</Link>
+            <Link href="/stories">{dictionary.navbar.stories[lang]}</Link>
           </li>
           <li className={current == "features" ? styles.active : ''} >
-            <Link href="/features">FEATURES</Link>
+            <Link href="/features">{dictionary.navbar.features[lang]}</Link>
           </li>
           <li className={current == "pricing" ? styles.active : ''} >
-            <Link href="/pricing">PRICING</Link>
+            <Link href="/pricing">{dictionary.navbar.pricing[lang]}</Link>
           </li>
         </ul>
       </section>

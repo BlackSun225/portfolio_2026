@@ -38,8 +38,8 @@
 }
 
 
-.two h1, 
-.three h1 {
+.two h2, 
+.three h2 {
   color: var(--white);
   font-size: clamp(1rem, 2.5vw, 2.4rem);
   font-weight: 600;
@@ -91,7 +91,7 @@
   margin: 8dvw 0;
 }
 
-.two h1,  .three h1 {
+.two h2,  .three h2 {
   color: var(--black);
 }
 
@@ -153,8 +153,8 @@
     flex: 1;
   }
 
-  .two h1, 
-  .three h1 {
+  .two h2, 
+  .three h2 {
    font-size: clamp(1.3rem, 5vw, 2.2rem);
   }
 

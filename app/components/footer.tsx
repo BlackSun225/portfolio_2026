@@ -9,14 +9,16 @@ import tiktok from "@/public/tiktok.png";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../lib/styles/footer.module.css";
-import { RouteContext} from "./navContext";
+import { RouteContext, LangContext} from "./navContext";
 import { useContext} from "react";
+import { dictionary } from "../utils/data";
 
 import Cta from "./cta";
 import { link } from "fs";
 
 export default function Footer() {
   const {current} = useContext(RouteContext);
+  const {lang} = useContext(LangContext);
   
   return (
     <footer className={styles.footer}>
@@ -34,18 +36,18 @@ export default function Footer() {
       <div className={styles.right}>
         <ul>
             <li className={current == "stories" ? styles.active : ''} >
-              <Link href="/stories">STORIES</Link>
+              <Link href="/stories">{dictionary.navbar.stories[lang]}</Link>
             </li>
             <li className={current == "features"  ? styles.active : ''} >
-              <Link href="/features">FEATURES</Link>
+              <Link href="/features">{dictionary.navbar.features[lang]}</Link>
             </li>
             <li className={current == "pricing"  ? styles.active : ''} >
-              <Link href="/pricing">PRICING</Link>
+              <Link href="/pricing">{dictionary.navbar.pricing[lang]}</Link>
             </li>
         </ul>
         <div className={styles.lastDivRight}>
           <Cta />
-          <p>Copyright {new Date().getFullYear()}. All Rights Reserved</p>
+          <p>{dictionary.copyrighting[lang]}</p>
         </div>
       </div>
     </footer>

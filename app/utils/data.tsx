@@ -13,6 +13,10 @@ export const dictionary = {
             en: "PRICING"
         }
     },
+    copyrighting: {
+        fr: `© Droits d'auteurs ${new Date().getFullYear()}. Tous droits reservés`,
+        en: `© Copyright ${new Date().getFullYear()}. All rights reserved`
+    },
     home: {
         gradientSection: {
             h1: {
@@ -20,17 +24,17 @@ export const dictionary = {
                 en: "WEB AND MOBILE FULLSTACK DEVELOPER"
             },
             p: {
-                fr: `Je suis Doudjo Christ FOUSSENI, développeur web et mobile fullstack Ivoirien. J'aime la bonne cuisine (riche et savoureuse comme celle 
-                de mon beau pays la Côte d'Ivoire), les voyages, les mangas, le sport, les jeux vidéos, la littérature (fantastique en particulier), 
-                l'architecture, la musique et la technologie. 
+                fr: `Je suis Doudjo Christ FOUSSENI, développeur web et mobile fullstack Ivoirien.
                 La technologie est un outil puissant qui entre de bonnes mains, permet d'améliorer la qualité de vie des hommes et leur productivité. 
                 Je m'appuie donc sur mes compétences, acquises au fil des années en travaillant sur des projets aussi complexes que variés, et 
                 mon expérience, pour concevoir la solution adaptée à vos objectifs.
-                Parcourez mon portfolio et appréciez la qualité de mon travail. Et si ce n'est pas déjà fait, visitez la Sublime Côte d'Ivoire.
-                Savourez le Cacao et le Café d'exception, l'Anacarde, le Vin de palme, l'Alloco, le Gnomi, le Riz local, les délicieuses sauces
-                pendant que je donnerai vie à votre projet. Echangeons nos expériences, notre savoir, et enrichissons nous mutuellement de nos cultures.
+                Echangeons nos expériences, notre savoir, et enrichissons nous mutuellement.
                 `,
-                en: ``
+                en: `I am Christ Doudjo FOUSSENI, ivorian web and mobile fullstack developer. 
+                Technology is a powerful tool which i skilled hands, improve life of humans and their productivity. I use my skills, acquired while working 
+                on various projects, and my experience, to build the solution that fit you needs.
+                Let's trade experience, knowledge and learn from each other culture. 
+                `
             }
         },
         two: {
@@ -47,11 +51,11 @@ export const dictionary = {
                 Conception d'assistant virtuel avec un Raspberry PI, une baffle et une IA
                 `,
                 en: `
-                4years practice
-                +100 UI made
-                Processed huge data (many millions of row) of a telecom company
-                +20 API made
-                Virtual Assistant with RaspBerry PI, Speaker and AI.
+                🧗🏾‍♂️4years practice
+                👨🏾‍💻+100 UI made
+                💎 Processed huge data (many millions of row) of a telecom company
+                💎 +20 API made
+                💎 Virtual Assistant with RaspBerry PI, Speaker and AI.
                 `
             } 
         },
@@ -76,11 +80,11 @@ export const dictionary = {
             p: {
                 fr: `Je conseil, j'oriente, je transforme vos idées en projet et je conçois des solutions efficientes à partir d'un cahier 
                 de charges orienté objectif.`,
-                en: ""
+                en: "I advice, guide, tranform your ideas in project and i build efficient solutions regarding objectives"
             }
         },
         testimonial: {
-            fr: `Une porteuse de projet a économisé plus de 2.000.000fcfa (3000euro) grâce à mon accompagnement.
+            fr: `Une porteuse de projet a économisé plus de 2.000.000fcfa grâce à mon accompagnement.
 
                 Elle avait une idée et voulait une application. Mais la technologie qu'elle voulait utiliser lui couterait plus cher qu'il n'y parait.
                 Sans compter les frais annexes liés au projet en lui même.
@@ -89,29 +93,40 @@ export const dictionary = {
 
                 On parle d'une augmentation de plus de 100% du budget initial pour la conception.
 
-                En s'offrant un accompagnement de moins de 100euro (65000fcfa) pour une heure de conseil, 
-                nous avons réévalué le coût du projet et évité un imprévu de plus de 3000euro (2.000.000fcfa).
+                En s'offrant un accompagnement de moins de 100euro 65000fcfa pour une heure de conseil, 
+                nous avons réévalué le coût du projet et évité un imprévu de plus de 2.000.000fcfa.
 
                 Je ne me contente pas de vendre des applications, je conseil, j'oriente, et je propose des solutions efficientes.`,
             en: `
-            
+                A project manager saves more than 3000€ with my support. 
+                She had an idea and want an application. But technology she planned to use will cost her much more money than what she thank.
+                Without additional costs related to the project.
+
+                I reveal to her this hidden costs, some invisibles constraints that will consume a lot of additional ressources.
+                We are talking about more than 100% initial budget increase.
+
+                But since she invested less than 100€ for a one hour coaching session, we find out the real price of the project and avoid 
+                an unforseen of more than 3000€.
+
+                I am not only a software developer, i advice, guide, and bring efficient solutions.
             `
         },
         box1: {
             h2: {
                 fr: "Accompagnement personnalisé",
-                en: "Tailored "
+                en: "Tailored support "
             },
             p: {
-                fr: `Je vous accompagnerai pour choisir la solution adaptée à votre projet, choisir les fonctionalités, technologies qui 
-                apporteront un plus financièrement et qualitativement. `,
-                en: ""
+                fr: `Je vous accompagne pour choisir la solution adaptée à votre projet, choisir les fonctionalités, technologies qui 
+                apporteront un plus qualitativement. `,
+                en: `I support you to find the solution that best fit your needs, choosing functionalies, 
+                technologies which bring more quality`
             }
         },
         box2: {
             h2: {
                 fr: "Conception d'application",
-                en: "Application"
+                en: "Application design"
             },
             p: {
                 fr: "Application web, mobile ou desktop",
@@ -125,7 +140,7 @@ export const dictionary = {
             },
             p: {
                 fr: `Apparaitre dans les résultats de recherche, être visible sur google maps et ou sur les réseaux sociaux adaptés à votre audience.`,
-                en: ""
+                en: "Visible in search results, on google maps or social networks regarding your audience"
             }
         },
         box4: {
@@ -135,9 +150,11 @@ export const dictionary = {
             },
             p: {
                 fr: `Utiliser les réseaux sociaux pour obtenir les bonnes informations et trouver les bons mots clés. 
-                Initier vos enfants à la programmation de manière ludique. 
+                Initier vos enfants à la conception d'application de manière ludique. 
                 Découvrir et prendre en main des outils pour améliorer votre productivité. `,
-                en: ""
+                en: `Use social networks to find useful informations and keywords. 
+                Introduce kids to application design in a fun way.
+                Discover and use tools to improve your productivity`
             }
         },
         box5: {
@@ -148,7 +165,7 @@ export const dictionary = {
             p: {
                 fr: `Je conçois des sites web responsive, conformes aux maquettes, 
                 qui permettent un affichage optimal des informations sur un écran d'ordinateur, de tablette et de smartphone.`,
-                en: ""
+                en: `I build responsive website in accordance to mock-up, which allow optimal display on smartphone, tablet and computer screen.`
             }
         },
         box6: {
@@ -159,8 +176,14 @@ export const dictionary = {
             p: {
                 fr: `Vous avez une application ou un site web que vous souhaiter mettre en ligne, 
                 une application mobile android à mettre sur le playstore ? Contactez-moi`,
-                en: ""
+                en: `You have an application or website you need to deploy, an android mobile app to put on playstore ? Contact me.`
             }
+        },
+    },
+    attract: {
+        h1: {
+            fr: "CONTACTEZ MOI POUR VOTRE PROJET",
+            en: "CONTACT ME FOR YOU PROJECT" 
         }
     },
     pricing: {
@@ -173,17 +196,18 @@ export const dictionary = {
                 fr: `Tous les montants mentionnés sont à titre indicatifs, évoluent selon la 
                 complexité du projet (estimation faite en fonction de la maquette ou des visuels fournis) 
                 et n'incluent pas le coût de conception d'une maquette.`,
-                en: ""
+                en: `All mentioned amounts are references, they evolve regarding project complexity (regarding mockups, functionalities...) and don't include 
+                mock-up design.`
             }
         },
         warningUI: {
             fr: "La conception de maquette figma est un service supplémentaire à partir de 260.000fcfa.",
-            en: ""
+            en: `Figma mock-up design is an additional service from 400€`
         },
         warningAssets: {
             fr: `L'accompagnement pour la rédaction du cahier de charges et le choix des visuels 
             est accessible à partir de 100.000fcfa.`,
-            en: ``
+            en: `Support for drafting specifications and visuals selection is from 150€`
         },
         frontend: {
             landing_page: {
@@ -209,7 +233,11 @@ export const dictionary = {
         },
         backend: {
             fr: "Le coût sera fonction du cahier des charges.",
-            en: "Price is regarding functionalities"
+            en: "Price is regarding specifications"
         }
+    },
+    actionButton: {
+        fr: "COLLABORONS",
+        en: "CONTACT ME"
     }
 };

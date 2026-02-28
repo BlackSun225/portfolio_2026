@@ -5,9 +5,6 @@ import leaf from "@/public/leaf.jpg";
 import olive from "@/public/olive.jpg";
 import arrow from "../public/arrow.svg";
 
-import discover from "../public/discover.jpg";
-import hardworker from "../public/hard_worker.jpg";
-
 import photograph from "../public/photograph.jpg";
 import capturesmall from "../public/capture.jpg";
 import watersmall from "../public/water.jpg";
@@ -24,27 +21,28 @@ import GradientSection from "./components/gradientSection";
 import Card from "./components/card";
 
 import { useEffect, useContext } from "react";
-import { RouteContext } from "./components/navContext";
+import { RouteContext, LangContext } from "./components/navContext";
+import { dictionary } from "./utils/data";
 
 
 export default function Home() {
-  const sectionOneTitle = "CREATE AND SHARE YOUR PHOTO STORIES";
-  const sectionOneParagraph = `Photosnap is a platform for photographers and visual storytellers. 
-  We make it easy to share photos, tell stories and connect with others.`
 
+  const {lang} = useContext(LangContext);
 
   return (
     <>
-      <GradientSection title={sectionOneTitle} paragraph={sectionOneParagraph} imagePath={african_future} invite={true} />
+      <GradientSection 
+      title={dictionary.home.gradientSection.h1[lang]} 
+      paragraph={dictionary.home.gradientSection.p[lang]} 
+      imagePath={african_future} invite={true} />
+
       <section className={styles.two}>
         <div className={styles.left}>
           <Image className={styles.img} src={olive} alt="" />
         </div>
         <div className={styles.right}>
-          <h1>BEAUTIFUL STORIES EVERY TIME</h1>
-          <p>We provide design templates href ensure your stories look terrific. Easily add photos, 
-            text, embed maps and media from other networks. Then share your story with everyone.
-          </p>
+          <h2>{dictionary.home.two.h2[lang]}</h2>
+          <p>{dictionary.home.two.p[lang]}</p>
           <Link href="/stories" className={styles.invite} >
             <span>VIEW THE STORIES</span>
             <Image alt="" src={arrow} />
@@ -53,9 +51,8 @@ export default function Home() {
       </section>
       <section className={styles.three}>
         <div className={styles.left}>
-          <h1>DESIGNED FOR EVERYONE</h1>
-          <p>Photosnap can help you create stories that resonate with your audience. Our tool is 
-            designed for photographers of all levels, brands, business you name it.
+          <h2>{dictionary.home.three.h2[lang]}</h2>
+          <p>{dictionary.home.three.p[lang]}
           </p>
           <Link href="/stories" className={styles.invite}>
             <span>VIEW THE STORIES</span>

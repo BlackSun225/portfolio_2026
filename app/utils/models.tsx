@@ -46,3 +46,9 @@ export interface StoryInterface {
   portrait: string, 
   landscape: string
 }
+
+export enum LangPrefix {
+  fr = "fr",
+  en = "en",
+  // de = "de"
+}

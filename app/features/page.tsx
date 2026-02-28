@@ -7,75 +7,61 @@ import embed from "@/public/embed.svg";
 import customDomain from "@/public/custom-domain.svg";
 import exposure from "@/public/boost-exposure.svg";
 import drag from "@/public/drag-drop.svg";
-
-import leaf from "@/public/leaf.jpg";
-import tree from "@/public/tree.jpg";
-import discover from "@/public/discover.jpg";
 import craftmanship from "@/public/craftmanship.jpg";
 
 import { useEffect, useContext } from "react";
-
+import { LangContext } from "../components/navContext";
+import { dictionary } from "../utils/data";
 import GradientSection from "../components/gradientSection";
 import styles from "@/app/lib/styles/features.module.css";
 import Image from "next/image";
 import Attract from "../components/attract";
 
-const sectionTitle = "FEATURES";
-const sectionParagraph = `We make sure all of our features are designed to be loved by every 
-aspiring and even professional photograpers who wanted to share their stories.`;
 
 export default function Features() {
+    const {lang} = useContext(LangContext);
 
     return (
         <div className={styles.features}>
-            <GradientSection title={sectionTitle} paragraph={sectionParagraph} imagePath={craftmanship} invite={false} />
+            <GradientSection 
+            title={dictionary.features.gradient.h1[lang]} 
+            paragraph={dictionary.features.gradient.p[lang]} 
+            imagePath={craftmanship} 
+            invite={false} />
+
             <section className={styles.pros}>
                 <div className={styles.box}>
                     <Image className={styles.img} src={responsive} alt="" />
-                    <h2>100% Responsive</h2>
-                    <p>{`No matter which the device you're on, our site is fully responsive and stories look 
-                        beautiful on any screen.`}</p>
+                    <h2>{dictionary.features.box1.h2[lang]}</h2>
+                    <p>{dictionary.features.box1.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
                     <Image className={styles.img} src={noLimit} alt="" />
-                    <h2>No Photo Upload Limit</h2>
-                    <p>Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all 
-                        of your stories in one go.
-                    </p>
+                    <h2>{dictionary.features.box2.h2[lang]}</h2>
+                    <p>{dictionary.features.box2.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
                     <Image className={styles.img} src={embed} alt="" />
-                    <h2>Available to Embed</h2>
-                    <p>Embed Tweets, Facebook posts, Instagram media, Vimeo or Youtube videos, Googles Maps, 
-                        and more.
-                    </p>
+                    <h2>{dictionary.features.box3.h2[lang]}</h2>
+                    <p>{dictionary.features.box3.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
                     <Image className={styles.img} src={customDomain} alt="" />
-                    <h2>Custom Domain</h2>
-                    <p>
-                        With Photosnap subscriptions you can host your stories on your domain. You can 
-                        also remove our branding!
-                    </p>
+                    <h2>{dictionary.features.box4.h2[lang]}</h2>
+                    <p>{dictionary.features.box4.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
                     <Image className={styles.img} src={exposure} alt="" />
-                    <h2>Boost Your Exposure</h2>
-                    <p>
-                        Users that viewed your story or gallery can easily get notified of new and 
-                        features stories with our built in mailing list.
-                    </p>
+                    <h2>{dictionary.features.box5.h2[lang]}</h2>
+                    <p>{dictionary.features.box5.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
                     <Image className={styles.img} src={drag} alt="" />
-                    <h2>Drag & Drop Image</h2>
-                    <p>
-                        Easily drag and drop your images and get beautiful shots everytime. No over the 
-                        top tooling to add friction to creating stories.
-                    </p>
+                    <h2>{dictionary.features.box6.h2[lang]}</h2>
+                    <p>{dictionary.features.box6.p[lang]}</p>
                 </div>
             </section>
-            <Attract />
+            <Attract h1={dictionary.attract.h1[lang]} />
         </div>
     );
 }
