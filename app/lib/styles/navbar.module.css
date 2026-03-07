@@ -8,6 +8,73 @@
   position: relative;
 }
 
+.langDropdown {
+  position: absolute;
+  left: 66%;
+  top: 0;
+  z-index: 1;
+  background: white;
+  cursor: pointer;
+}
+
+.langDropdown .dropTrigger {
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.langDropdown .head, 
+.langDropdown .body .row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.langDropdown .head {
+  padding: 0.2rem 0.5rem;
+  box-shadow: 0 0 2px 2px rgb(173, 173, 173);
+  font-weight: 700;
+}
+
+.arrow {
+  width: 0;
+  border-width: 5px 5px 0 5px;
+  border-color: black transparent transparent transparent;
+  border-style: solid;
+}
+
+.langDropdown:has(.dropTrigger:is(:checked)) .arrow {
+  transform: rotateX(180deg);
+}
+
+.langDropdown .body {
+  display: none;
+  flex-direction: column;
+  background: white;
+  border: 1px solid black;
+  padding: 0.3rem 0;
+}
+
+.langDropdown:has(.dropTrigger:is(:checked)) .body {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.langDropdown .body .row {
+  width: 100%;
+  padding: 0rem 0.5rem;
+}
+
+.langDropdown .body .row:hover {
+  background: linear-gradient(to top right, var(--pastelOrange), var(--violet), var(--blue)) no-repeat;
+}
+
+.langDropdown .body li.active {
+  font-weight: 700;
+}
+
 .imgContainer {
   width: 150px;
   height: 15px;

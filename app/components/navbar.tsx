@@ -7,14 +7,22 @@ import styles from "../lib/styles/navbar.module.css";
 import { RouteContext, LangContext} from "./navContext";
 import { usePathname, useRouter } from "next/navigation";
 import { dictionary } from "../utils/data";
-import Cta from "./cta";
+// import Cta from "./cta";
+// import germany from "@/public/germany.png";
+import france from "@/public/france.png";
+import usa from "@/public/usa.png";
+import { LangPrefix } from "../utils/models";
 
-// eslint-disable-next-line react/prop-types
+
 export default function Navbar() {
 
   const path = usePathname();
   const {current, setCurrent} = useContext(RouteContext);
-  const {lang} = useContext(LangContext);
+  const {lang, setLang} = useContext(LangContext);
+
+  function changeLang(a: string) {
+    setLang(a as LangPrefix);
+  }
 
   useEffect(() => {
     console.log("path is : ", path);
@@ -37,6 +45,25 @@ export default function Navbar() {
           <Link href="/pricing">{dictionary.navbar.pricing[lang]}</Link>
         </li>
       </ul>
+      <label className={styles.langDropdown} >
+        <input className={styles.dropTrigger} type="checkbox" />
+        <div className={styles.head}>
+          <span className={styles.headText} > {lang.toUpperCase()} </span>
+          <Image className={styles.headImg} width="27" src={lang == "fr" ? france : usa } alt="language flag" />
+          <span className={styles.arrow}></span>
+        </div>
+
+        <ul className={styles.body} >
+          <li className={`${styles.row} ${lang == 'fr' && styles.active}`} onClick={() => changeLang("fr")} >
+            <span>FR</span>
+            <Image width="27" src={france} alt="france" />
+          </li>
+          <li className={`${styles.row} ${lang == 'en' && styles.active}`} onClick={() => changeLang("en")} >
+            <span>EN</span>
+            <Image width="27" src={usa} alt="usa" />
+          </li>
+        </ul>
+      </label>
       <Link className={`${styles.desk} ${styles.btn}`} href="mailto:yohananchris@outlook.com">{dictionary.actionButton[lang]}</Link>
 
       <span className={styles.refSpan} ></span>

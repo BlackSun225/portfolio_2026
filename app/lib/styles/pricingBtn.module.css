@@ -1,0 +1,20 @@
+
+.pricingBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    box-shadow: 0px 0px 15px var(--pastelOrange);
+    transition: all 0.5s linear;
+}
+
+.pricingBtn:hover {
+    box-shadow: -2px -2px 4px var(--pastelOrange), 2px 2px 4px var(--blue), -2px 2px 4px var(--violet), 2px -2px 4px var(--violet);
+}
+
+.pricingBtnText {
+    color: var(--pastelOrange);
+    font-weight: 500;
+}

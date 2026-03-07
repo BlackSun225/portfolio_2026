@@ -2,12 +2,12 @@
 
 
 import responsive from "@/public/responsive.svg";
-import noLimit from "@/public/no-limit.svg";
 import embed from "@/public/embed.svg";
 import customDomain from "@/public/custom-domain.svg";
-import exposure from "@/public/boost-exposure.svg";
-import drag from "@/public/drag-drop.svg";
+import training from "@/public/training.png";
 import craftmanship from "@/public/craftmanship.jpg";
+import application from "@/public/application.png";
+import leadership from "@/public/leadership.png";
 
 import { useEffect, useContext } from "react";
 import { LangContext } from "../components/navContext";
@@ -31,12 +31,12 @@ export default function Features() {
 
             <section className={styles.pros}>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={responsive} alt="" />
+                    <Image className={styles.img} src={leadership} alt="" />
                     <h2>{dictionary.features.box1.h2[lang]}</h2>
                     <p>{dictionary.features.box1.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={noLimit} alt="" />
+                    <Image className={styles.img} src={application} alt="" />
                     <h2>{dictionary.features.box2.h2[lang]}</h2>
                     <p>{dictionary.features.box2.p[lang]}</p>
                 </div>
@@ -46,17 +46,17 @@ export default function Features() {
                     <p>{dictionary.features.box3.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={customDomain} alt="" />
+                    <Image className={styles.img} src={training} alt="" />
                     <h2>{dictionary.features.box4.h2[lang]}</h2>
                     <p>{dictionary.features.box4.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={exposure} alt="" />
+                    <Image className={styles.img} src={responsive} alt="" />
                     <h2>{dictionary.features.box5.h2[lang]}</h2>
                     <p>{dictionary.features.box5.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={drag} alt="" />
+                    <Image className={styles.img} src={customDomain} alt="" />
                     <h2>{dictionary.features.box6.h2[lang]}</h2>
                     <p>{dictionary.features.box6.p[lang]}</p>
                 </div>

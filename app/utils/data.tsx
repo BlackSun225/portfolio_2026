@@ -14,7 +14,7 @@ export const dictionary = {
         }
     },
     copyrighting: {
-        fr: `© Droits d'auteurs ${new Date().getFullYear()}. Tous droits reservés`,
+        fr: `© Droits d'auteur ${new Date().getFullYear()}. Tous droits reservés`,
         en: `© Copyright ${new Date().getFullYear()}. All rights reserved`
     },
     home: {
@@ -44,17 +44,17 @@ export const dictionary = {
             },
             p: {
                 fr: `
-                4ans de pratique
-                +100 Interfaces réalisées (Web & Mobile)
-                Traitement de données de masse (plusieurs millions de ligne) d'un opérateur télécom
-                +20 API réalisés
-                Conception d'assistant virtuel avec un Raspberry PI, une baffle et une IA
+                🧗🏾‍♂️4ans de pratique
+                👨🏾‍💻+100 Interfaces réalisées (Web & Mobile)
+                💎Traitement de données de masse (plusieurs millions de ligne) d'un opérateur télécom
+                💎+20 API réalisés
+                💎Conception d'assistant virtuel avec un Raspberry PI, une baffle et une IA
                 `,
                 en: `
                 🧗🏾‍♂️4years practice
                 👨🏾‍💻+100 UI made
-                💎 Processed huge data (many millions of row) of a telecom company
-                💎 +20 API made
+                 💎Processed huge data (many millions of row) of a telecom company
+                 💎+20 API made
                 💎 Virtual Assistant with RaspBerry PI, Speaker and AI.
                 `
             } 
@@ -201,39 +201,87 @@ export const dictionary = {
             }
         },
         warningUI: {
-            fr: "La conception de maquette figma est un service supplémentaire à partir de 260.000fcfa.",
-            en: `Figma mock-up design is an additional service from 400€`
+            fr: "La conception de maquette figma est un service supplémentaire à partir de 400€ (260.000fcfa).",
+            en: `Figma mock-up design is an additional service from 465$`
         },
         warningAssets: {
             fr: `L'accompagnement pour la rédaction du cahier de charges et le choix des visuels 
-            est accessible à partir de 100.000fcfa.`,
-            en: `Support for drafting specifications and visuals selection is from 150€`
+            est accessible à partir de 150€ (100.000fcfa).`,
+            en: `Support for drafting specifications and visuals selection is from 175$`
         },
         frontend: {
             landing_page: {
-                fr: "360.000fcfa",
-                en: "550€"
+                fr: {
+                    name: "Landing Page",
+                    description: "",
+                    price: "550€ (360.000fcfa)"
+                },
+                en: {
+                    name: "Landing Page",
+                    description: "",
+                    price: "635$"
+                }
             },
             multipage: {
-                fr: "260.000fcfa / page, déploiement 130.000fcfa",
-                en: "400€ / page, deployment 200€"
+                fr: {
+                    name: "Site Multipage",
+                    description: "",
+                    price: "400€ (260.000fcfa) / page, déploiement 200€ (130.000fcfa)"
+                },
+                en: {
+                    name: "Multipage Website",
+                    description: "",
+                    price: "465$ / page, deployment 200$"
+                }
             },
             web_app: {
-                fr: "327.000fcfa / page, déploiement 195.000fcfa",
-                en: "500€ / page, deployment 300€"
+                fr: {
+                    name: "Application Web",
+                    description: "",
+                    price: "500€ (327.000fcfa) / page, déploiement 300€ (195.000fcfa)"
+                },
+                en: {
+                    name: "Web App",
+                    description: "",
+                    price: "585$ / page, deployment 340$"
+                }
             },
             android_app: {
-                fr: "980.000fcfa, déploiement 200.000fcfa",
-                en: "1500€, deployment 300€"
+                fr: {
+                    name: "Application Android",
+                    description: "",
+                    price: "1500€ (980.000fcfa), déploiement 300€ (200.000fcfa)"
+                },
+                en: {
+                    name: "Android App",
+                    description: "",
+                    price: "1740$, deployment 335$"
+                } 
             },
             iOS_app: {
-                fr: "1.325.000fcfa, déploiement 350.000fcfa",
-                en: "2000€, deployment 540€"
+                fr: {
+                    name: "Application iOS",
+                    description: "",
+                    price: "2000€ (1.325.000fcfa), déploiement 530€ (350.000fcfa)"
+                },
+                en: {
+                    name: "iOS App",
+                    description: "",
+                    price: "2300$, deployment 600$"
+                }
             }
         },
         backend: {
-            fr: "Le coût sera fonction du cahier des charges.",
-            en: "Price is regarding specifications"
+            fr: {
+                name: "Backend",
+                description: "",
+                price: "Le coût dépendra du cahier de charges."
+            },
+            en: {
+                name: "Backend",
+                description: "",
+                price: "Price is regarding specifications"
+            }
         }
     },
     actionButton: {

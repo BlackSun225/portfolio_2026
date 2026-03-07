@@ -22,7 +22,7 @@
   flex-direction: column;
   width: 100%;
   position: relative;
-  padding: 0 3dvh 1dvh 6dvw ;
+  padding: 0 10dvh 1dvh 6dvw ;
   row-gap: 1.5rem;
 }
 
@@ -40,6 +40,8 @@
   width: 53%;
   overflow: hidden;
   position: relative;
+  aspect-ratio: 3/2;
+  overflow-y: hidden;
 }
 
 .one .right > img{
@@ -55,7 +57,7 @@
 }
 
 .one p {
-  color: var(--darkgrey);
+  color: var(--grey);
   font-size: clamp(0.9rem, 1.6vw, 1.1rem);
 }
 

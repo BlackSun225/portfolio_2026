@@ -4,15 +4,7 @@ import african_future from "../public/african_future.jpg";
 import leaf from "@/public/leaf.jpg";
 import olive from "@/public/olive.jpg";
 import arrow from "../public/arrow.svg";
-
-import photograph from "../public/photograph.jpg";
-import capturesmall from "../public/capture.jpg";
-import watersmall from "../public/water.jpg";
-import catchIdeaSmall from "../public/catch_idea.jpg";
-
-import responsive from "../public/responsive.svg";
-import noLimit from "../public/no-limit.svg";
-import embed from "../public/embed.svg";
+import baie from "@/public/water_flow.jpg";
 
 import styles from "@/app/lib/styles/home.module.css";
 import Image from "next/image";
@@ -38,13 +30,13 @@ export default function Home() {
 
       <section className={styles.two}>
         <div className={styles.left}>
-          <Image className={styles.img} src={olive} alt="" />
+          <Image className={styles.img} src={baie} alt="" />
         </div>
         <div className={styles.right}>
           <h2>{dictionary.home.two.h2[lang]}</h2>
           <p>{dictionary.home.two.p[lang]}</p>
           <Link href="/stories" className={styles.invite} >
-            <span>VIEW THE STORIES</span>
+            <span>{lang == "fr" ? "VOIR MES PROJETS" : "VIEW MY WORK"}</span>
             <Image alt="" src={arrow} />
           </Link>
         </div>
@@ -54,22 +46,22 @@ export default function Home() {
           <h2>{dictionary.home.three.h2[lang]}</h2>
           <p>{dictionary.home.three.p[lang]}
           </p>
-          <Link href="/stories" className={styles.invite}>
-            <span>VIEW THE STORIES</span>
+          <Link href="/features" className={styles.invite}>
+            <span>{`${lang == "fr" ? "VOIR MES" : "VIEW MY"} SERVICES`}</span>
             <Image alt="" src={arrow} />
           </Link>
         </div>
         <div className={styles.right}>
-          <Image alt="" src={leaf} />
+          <Image alt="" src={olive} />
         </div>
       </section>
-      <section className={styles.discover}>
+      {/* <section className={styles.discover}>
         <Card imagePathPortrait={photograph} title="Photograph of the world" author="Chris" clickPath="/stories" />
         <Card imagePathPortrait={capturesmall} title="Photograph of the world" author="Chris" clickPath="/stories" />
         <Card imagePathPortrait={watersmall} title="Photograph of the world" author="Chris" clickPath="/stories" />
         <Card imagePathPortrait={catchIdeaSmall} title="Photograph of the world" author="Chris" clickPath="/stories" />
-      </section>
-      <section className={styles.pros}>
+      </section> */}
+      {/* <section className={styles.pros}>
         <div className={styles.box}>
           <Image src={responsive} alt="" />
           <h2>100% Responsive</h2>
@@ -91,7 +83,7 @@ export default function Home() {
             and more.
           </p>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
