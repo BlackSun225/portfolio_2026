@@ -1,4 +1,8 @@
 export const dictionary = {
+    notFound: {
+        fr: "Retour vers l'accueil",
+        en: "Return home"
+    },
     navbar: {
         stories: {
             fr: "PROJETS",
@@ -213,79 +217,83 @@ export const dictionary = {
             landing_page: {
                 fr: {
                     name: "Landing Page",
-                    description: "",
-                    price: "550€ (360.000fcfa)"
+                    // description: "",
+                    price: "450€ (300.000fcfa) déploiement inclus"
                 },
                 en: {
                     name: "Landing Page",
-                    description: "",
-                    price: "635$"
+                    // description: "",
+                    price: "520$ deployment included"
                 }
             },
             multipage: {
                 fr: {
                     name: "Site Multipage",
-                    description: "",
-                    price: "400€ (260.000fcfa) / page, déploiement 200€ (130.000fcfa)"
+                    // description: "",
+                    price: "300€ (200.000fcfa) / page, déploiement 150€ (100.000fcfa)"
                 },
                 en: {
                     name: "Multipage Website",
-                    description: "",
-                    price: "465$ / page, deployment 200$"
+                    // description: "",
+                    price: "350$ / page, deployment 170$"
                 }
             },
             web_app: {
                 fr: {
                     name: "Application Web",
-                    description: "",
-                    price: "500€ (327.000fcfa) / page, déploiement 300€ (195.000fcfa)"
+                    // description: "",
+                    price: "450€ (300.000fcfa) / page, déploiement 230€ (150.000fcfa)"
                 },
                 en: {
                     name: "Web App",
-                    description: "",
-                    price: "585$ / page, deployment 340$"
+                    // description: "",
+                    price: "515$ / page, deployment 265$"
                 }
             },
             android_app: {
                 fr: {
                     name: "Application Android",
-                    description: "",
-                    price: "1500€ (980.000fcfa), déploiement 300€ (200.000fcfa)"
+                    // description: "",
+                    price: "900€ (600.000fcfa), déploiement 300€ (200.000fcfa)"
                 },
                 en: {
                     name: "Android App",
-                    description: "",
-                    price: "1740$, deployment 335$"
+                    // description: "",
+                    price: "1040$, deployment 345$"
                 } 
             },
             iOS_app: {
                 fr: {
                     name: "Application iOS",
-                    description: "",
-                    price: "2000€ (1.325.000fcfa), déploiement 530€ (350.000fcfa)"
+                    // description: "",
+                    price: "1200€ (800000fcfa), déploiement 380€ (250.000fcfa)"
                 },
                 en: {
                     name: "iOS App",
-                    description: "",
-                    price: "2300$, deployment 600$"
+                    // description: "",
+                    price: "1400$, deployment 440$"
                 }
             }
         },
         backend: {
             fr: {
                 name: "Backend",
-                description: "",
-                price: "Le coût dépendra du cahier de charges."
+                // description: "",
+                price: "Pour les projets fullstack, le coût dépendra du cahier de charges."
             },
             en: {
                 name: "Backend",
-                description: "",
-                price: "Price is regarding specifications"
+                // description: "",
+                price: "For fullstack project, price is regarding specifications"
             }
         }
     },
     actionButton: {
         fr: "COLLABORONS",
         en: "CONTACT ME"
+    },
+    cardActionText: {
+        fr: "DECOUVRIR",
+        en: "DISCOVER"
     }
 };

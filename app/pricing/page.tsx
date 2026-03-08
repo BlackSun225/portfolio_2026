@@ -15,6 +15,7 @@ export default function Pricing() {
 
     const {lang} = useContext(LangContext);
     const frontendContent = dictionary.pricing.frontend;
+    const frontendKeysList = Object.keys(frontendContent);
 
     return (
         <>
@@ -28,7 +29,7 @@ export default function Pricing() {
                 <Warning data={dictionary.pricing.warningAssets[lang]} />
                 <Warning data={dictionary.pricing.warningUI[lang]} />
 
-                <div className={styles.btnList}>
+                {/* <div className={styles.btnList}>
                     {
                         Object.keys(dictionary.pricing.frontend).map((key , i) => {
                             const typedKey = key as keyof typeof frontendContent; // Narrow key to 'landing_page' | 'multipage' | etc.
@@ -37,8 +38,41 @@ export default function Pricing() {
                             return <PricingBtn key={i}  text={content[lang].name} />;
                         })
                     }
-                </div>
-                
+                </div> */}
+
+                <table className={styles.table}>
+                    <thead className={styles.thead} >
+                        <tr className={styles.tr} >
+                            <th>Type</th>
+                            {/* <th>Description</th> */}
+                            <th>💵</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            frontendKeysList.map((key, i) => {
+                                const typedKey = key as keyof typeof frontendContent; // Narrow key to 'landing_page' | 'multipage' | etc.
+                                const content = frontendContent[typedKey][lang];
+                                
+                                return (
+                                    <tr key={i} className={styles.tr}>
+                                        {
+                                            Object.keys(content).map((key2, i) => {
+                                                const typedKey2 = key2 as keyof typeof content;
+                                                const content2 = content[typedKey2];
+
+                                                return (
+                                                    <td key={i} >{content2}</td>
+                                                )
+                                            })
+                                        }
+                                    </tr>
+                                );
+                            })
+                        }
+                    </tbody>
+                </table>
+                <Warning data={dictionary.pricing.backend[lang].price} />
             </section>
             <Attract h1={dictionary.attract.h1[lang]} />
         </> 

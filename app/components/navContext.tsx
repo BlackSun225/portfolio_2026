@@ -24,6 +24,7 @@ export default function NavContextComponent({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   const [current, setCurrent] = useState<string>("");
   const [lang, setLang] = useState<LangPrefix>(LangPrefix.en);
 

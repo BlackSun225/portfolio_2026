@@ -17,14 +17,21 @@ import { LangPrefix } from "../utils/models";
 export default function Navbar() {
 
   const path = usePathname();
+
+    
   const {current, setCurrent} = useContext(RouteContext);
   const {lang, setLang} = useContext(LangContext);
 
   function changeLang(a: string) {
     setLang(a as LangPrefix);
+    localStorage.setItem("lang", a);
   }
 
   useEffect(() => {
+    const storedLang = localStorage.getItem("lang");
+    if(storedLang) {
+      setLang(storedLang as LangPrefix);
+    }
     console.log("path is : ", path);
     setCurrent(path.slice(1));
   }, [path]);
@@ -45,25 +52,27 @@ export default function Navbar() {
           <Link href="/pricing">{dictionary.navbar.pricing[lang]}</Link>
         </li>
       </ul>
+
       <label className={styles.langDropdown} >
         <input className={styles.dropTrigger} type="checkbox" />
         <div className={styles.head}>
           <span className={styles.headText} > {lang.toUpperCase()} </span>
-          <Image className={styles.headImg} width="27" src={lang == "fr" ? france : usa } alt="language flag" />
+          <Image className={styles.headImg} width="20" src={lang == "fr" ? france : usa } alt="language flag" />
           <span className={styles.arrow}></span>
         </div>
 
         <ul className={styles.body} >
           <li className={`${styles.row} ${lang == 'fr' && styles.active}`} onClick={() => changeLang("fr")} >
             <span>FR</span>
-            <Image width="27" src={france} alt="france" />
+            <Image width="20" src={france} alt="france" />
           </li>
           <li className={`${styles.row} ${lang == 'en' && styles.active}`} onClick={() => changeLang("en")} >
             <span>EN</span>
-            <Image width="27" src={usa} alt="usa" />
+            <Image width="20" src={usa} alt="usa" />
           </li>
         </ul>
       </label>
+
       <Link className={`${styles.desk} ${styles.btn}`} href="mailto:yohananchris@outlook.com">{dictionary.actionButton[lang]}</Link>
 
       <span className={styles.refSpan} ></span>
