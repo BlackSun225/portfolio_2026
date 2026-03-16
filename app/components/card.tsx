@@ -1,35 +1,32 @@
-// "use client"
-// import { useState } from "react";
+"use client"
 
 import arrow from "@/public/arrow.svg";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "../lib/styles/card.module.css";
 import { useContext } from "react";
 import { LangContext } from "./navContext";
 import { dictionary } from "../utils/data";
+import type { Project } from "@/lib/db";
 
 
 export default function Card({
-    clickPath, keyId, imagePathPortrait, date, parentRef, title /*, author*/
+    project, keyId, date, parentRef
 }: {
-    clickPath: string,
+    project: Project,
     keyId?: string,
-    imagePathPortrait: StaticImageData | string,
     date?: string,
     parentRef?: string,
-    title: string,
-    // author: string,
 }) {
 
   const {lang} = useContext(LangContext);
 
   return (
-    <Link href={clickPath} target="_blank" className={`${parentRef && parentRef == keyId ? styles.activeCard : ''} ${styles.card}`} >
-      <Image priority fill className={styles.img} alt="" src={imagePathPortrait} />
+    <Link href={project.urlPath} target="_blank" className={`${parentRef && parentRef == keyId ? styles.activeCard : ''} ${styles.card}`} >
+      <Image priority fill className={styles.img} alt="" src={project.imageUrl} />
       <div className={styles.infos}>
         <strong>{date ? new Date(date).toDateString() : ""}</strong>
-        <h1>{title.toString()}</h1>
+        <h1>{project.title}</h1>
         <h2>BlackSun225</h2>
         <div className={styles.line}></div>
         <div className={styles.action}>

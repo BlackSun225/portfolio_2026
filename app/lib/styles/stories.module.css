@@ -71,7 +71,7 @@ html {
   width: 100%;
   min-height: calc(100dvh - 6rem);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(325px, 50vw), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 50vw), 500px));
 }
 
 /* .emptyGallery {
