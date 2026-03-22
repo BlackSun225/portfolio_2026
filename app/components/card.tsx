@@ -7,7 +7,7 @@ import styles from "../lib/styles/card.module.css";
 import { useContext } from "react";
 import { LangContext } from "./navContext";
 import { dictionary } from "../utils/data";
-import type { Project } from "@/lib/db";
+import type { Project } from "@/lib/types";
 
 
 export default function Card({
@@ -27,7 +27,7 @@ export default function Card({
       <div className={styles.infos}>
         <strong>{date ? new Date(date).toDateString() : ""}</strong>
         <h1>{project.title}</h1>
-        <h2>BlackSun225</h2>
+        <h2>{project.technologies.join(" - ")}</h2>
         <div className={styles.line}></div>
         <div className={styles.action}>
           <span>{dictionary.cardActionText[lang]}</span> <Image className={styles.img} src={arrow} alt="" />

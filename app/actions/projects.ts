@@ -3,21 +3,21 @@
 import { revalidatePath } from 'next/cache';
 import { Project } from '@/lib/db';
 import { uploadImage, deleteImage } from '@/lib/imageService';
-import { z } from 'zod';
+import { check, z } from 'zod';
 
 // Validation schema
 const ProjectSchema = z.object({
-  title: z.string()
+  title: z.string().trim()
     .min(3, 'Title must be at least 3 characters')
     .max(100, 'Title must be less than 100 characters'),
   
-  description: z.string()
+  description: z.string().trim()
     .min(10, 'Description must be at least 10 characters')
     .max(1000, 'Description must be less than 1000 characters'),
   
   urlPath: z.url('Must be a valid URL'),
   
-  technologies: z.string()
+  technologies: z.string().trim()
     .transform(str => str.split(',').map(t => t.trim()).filter(Boolean))
     .refine(arr => arr.length > 0, 'At least one technology is required'),
 });
@@ -35,6 +35,45 @@ export async function createProject(formData: FormData): Promise<ActionResponse>
   try {
     console.log('🚀 Creating new project...');
 
+    // Validate text fields
+    const validatedData = ProjectSchema.parse({
+      title: formData.get('title'),
+      description: formData.get('description'),
+      urlPath: formData.get('urlPath'),
+      technologies: formData.get('technologies'),
+    });
+    console.log("field validated");
+    console.log("checking title and urlPath")
+
+    const [checkTitle, checkUrlPath] = await Promise.all([
+      Project.findOne({where: {title: validatedData.title}}),
+      Project.findOne({where: {urlPath: validatedData.urlPath}})
+    ]);
+
+    if(checkTitle || checkUrlPath) {
+      const errorsResponse: {success: false, errors: {field: string, message: string}[] | []} = {
+        success: false,
+        errors: []
+      };
+
+      if(checkTitle) {
+        errorsResponse.errors = [...errorsResponse.errors, {
+          field: "title",
+          message: "title should be unique"
+        }];
+      }
+
+      if(checkUrlPath) {
+        errorsResponse.errors = [...errorsResponse.errors, {
+          field: "urlPath",
+          message: "urlPath should be unique"
+        }];
+      }
+
+      return errorsResponse;
+    }
+
+    
     // Handle image upload
     const imageFile = formData.get('image') as File;
     
@@ -44,14 +83,6 @@ export async function createProject(formData: FormData): Promise<ActionResponse>
 
     const imageUrl = await uploadImage(imageFile);
     console.log('✅ Image uploaded:', imageUrl);
-
-    // Validate text fields
-    const validatedData = ProjectSchema.parse({
-      title: formData.get('title'),
-      description: formData.get('description'),
-      urlPath: formData.get('urlPath'),
-      technologies: formData.get('technologies'),
-    });
 
     // Save to database
     await Project.create({

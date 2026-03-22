@@ -7,6 +7,10 @@ html {
   padding-top: 6rem;
 } */
 
+.projectListHeader {
+  padding: 1.5rem 6vw;
+}
+
 /* .screen {
   position: relative;
   width: 0%;
@@ -71,7 +75,8 @@ html {
   width: 100%;
   min-height: calc(100dvh - 6rem);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 50vw), 500px));
+  /* border: 1px solid red; */
+  grid-template-columns: repeat(auto-fit, minmax(min(375px, 50vw), 0.35dvw));
 }
 
 /* .emptyGallery {

@@ -1,0 +1,21 @@
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: var(--black);
+  font-size: 0.85rem;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-weight: 600;
+  border: 2px solid var(--black);
+  transition: all 0.5s linear;
+  text-decoration: none;
+  color: white;
+}
+
+.btn:hover {
+  background: var(--white);
+  font-weight: 600;
+  transition: all 0.7s linear;
+  color: var(--black);
+}

@@ -2,6 +2,7 @@ import { Project } from '@/lib/db';
 import Link from 'next/link';
 import Card from '../components/card';
 import { DeleteButton } from '@/app/components/DeleteButton';
+import BorderButton from '../components/borderButton';
 import styles from "../lib/styles/stories.module.css";
 
 // This is a Server Component - fetches data directly from DB
@@ -12,18 +13,14 @@ export default async function ProjectsPage() {
 
   return (
     <main>
-      <h1 className="text-3xl font-bold">My Projects</h1>
-      <div>
-        <p className="text-gray-600 mt-2">
-          {projects.length} project{projects.length !== 1 ? 's' : ''}
-        </p>
-        <Link
-          href="/projects/new"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-        >
-          + New Project
-        </Link>
-      </div>
+      <section className={styles.projectListHeader}>
+        <h1>My Projects</h1>
+        <div>
+          <p>{projects.length} project{projects.length !== 1 ? 's' : ''}</p>
+          <BorderButton text="New Project" to="/projects/new" />
+        </div>
+      </section>
+      
       {/* Projects grid */}
       {projects.length === 0 ? (
         <div className={""}>

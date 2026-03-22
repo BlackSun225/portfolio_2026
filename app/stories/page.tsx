@@ -1,24 +1,37 @@
-"use client"
-import { useEffect, useContext, useState } from "react";
-import { RouteContext} from "../components/navContext";
-import { type StoryInterface } from "../utils/models";
+import { Suspense } from 'react';
+import { Project } from '@/lib/db';
+import ProjectList from "../components/ProjectList";
+import StoriesLoading from './loading';
 
-import { getStories } from "../utils/functions";
-
-import Card from "../components/card";
-import styles from "../lib/styles/stories.module.css";
-
-export default function Stories() {
-
-    useEffect(() => {
-  
-    }, [])
+async function StoriesCollection() {
+    const projects = await Project.findAll({
+        order: [['createdAt', 'DESC']],
+    });
 
     return (
         <main>
-          <div className={styles.gallery}>
-            
-          </div>
+            {projects.length === 0 ? (
+                <div className={""}>
+                    <p className={""}>No projects yet. Create your first project!</p>
+                </div>
+            ) : 
+                <ProjectList data={projects.map(elem => elem.get({plain: true}))} />
+            }
         </main>
+    );
+}
+
+export default async function Stories() {
+
+    return (
+        <>
+            {/* I use suspense to be sure to display the nav and footer component instantly 
+            and show the loading component between the nav and footer component while the stories collection load.
+            All the tag or component above the suspense will be shown directly even if 
+            the stories loading isn't available*/}
+            <Suspense fallback={<StoriesLoading />}>
+                <StoriesCollection />
+            </Suspense>
+        </>
     );
 }

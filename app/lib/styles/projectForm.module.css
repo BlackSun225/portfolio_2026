@@ -1,0 +1,94 @@
+.fakeBody {
+    display: flex;
+    width: 100%;
+}
+
+.projectForm {
+    padding: 1.5rem 6vw;
+}
+
+.projectForm h1 {
+    font-size: clamp(1rem, 2.5vw, 2.4rem);
+    letter-spacing: 2px;
+}
+
+.form {
+    /* width: 50%; */
+    width: clamp(300px, 100%, 500px);
+}
+
+.inputBox {
+    display: block;
+    /* width: clamp(300px, 100%, 500px); */
+    margin-bottom: 1rem;
+}
+
+.label{
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.required::after {
+    content: "*";
+    display: inline;
+    color: red;
+    font-size: 0.9rem;
+}
+
+.input, .textarea {
+    display: block;
+    width: 100%;
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
+}
+
+.mediaInputBox {
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0.5rem;
+    /* border-bottom: 2px solid black; */
+}
+
+.mediaInput {
+    width: 0;
+    height: 0;
+}
+
+.error {
+    color: red;
+    font-size: 0.85rem;
+}
+
+.submitBtn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 2px solid green;
+    color: green;
+    font-weight: 600;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.backBtn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 2px solid black;
+    color: black;
+    font-weight: 600;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.rowBetween {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.imgBox {
+    width: 300px;
+    aspect-ratio: 16/9;
+    border: 2px solid black;
+    margin: 0 auto;
+    position: relative;
+}
