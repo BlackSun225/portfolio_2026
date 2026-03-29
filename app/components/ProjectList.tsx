@@ -1,7 +1,7 @@
 import type { Project } from "@/lib/types";
 import Card from "./card";
 
-import styles from "../lib/styles/stories.module.css";
+import styles from "../lib/styles/work.module.css";
 
 
 export default function ProjectList({data}: {data: Project[]}) {

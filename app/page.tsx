@@ -35,7 +35,7 @@ export default function Home() {
         <div className={styles.right}>
           <h2>{dictionary.home.two.h2[lang]}</h2>
           <p>{dictionary.home.two.p[lang]}</p>
-          <Link href="/stories" className={styles.invite} >
+          <Link href="/work" className={styles.invite} >
             <span>{lang == "fr" ? "VOIR MES PROJETS" : "VIEW MY WORK"}</span>
             <Image alt="" src={arrow} />
           </Link>
@@ -46,7 +46,7 @@ export default function Home() {
           <h2>{dictionary.home.three.h2[lang]}</h2>
           <p>{dictionary.home.three.p[lang]}
           </p>
-          <Link href="/features" className={styles.invite}>
+          <Link href="/services" className={styles.invite}>
             <span>{`${lang == "fr" ? "VOIR MES" : "VIEW MY"} SERVICES`}</span>
             <Image alt="" src={arrow} />
           </Link>
@@ -56,16 +56,16 @@ export default function Home() {
         </div>
       </section>
       {/* <section className={styles.discover}>
-        <Card imagePathPortrait={photograph} title="Photograph of the world" author="Chris" clickPath="/stories" />
-        <Card imagePathPortrait={capturesmall} title="Photograph of the world" author="Chris" clickPath="/stories" />
-        <Card imagePathPortrait={watersmall} title="Photograph of the world" author="Chris" clickPath="/stories" />
-        <Card imagePathPortrait={catchIdeaSmall} title="Photograph of the world" author="Chris" clickPath="/stories" />
+        <Card imagePathPortrait={photograph} title="Photograph of the world" author="Chris" clickPath="/work" />
+        <Card imagePathPortrait={capturesmall} title="Photograph of the world" author="Chris" clickPath="/work" />
+        <Card imagePathPortrait={watersmall} title="Photograph of the world" author="Chris" clickPath="/work" />
+        <Card imagePathPortrait={catchIdeaSmall} title="Photograph of the world" author="Chris" clickPath="/work" />
       </section> */}
       {/* <section className={styles.pros}>
         <div className={styles.box}>
           <Image src={responsive} alt="" />
           <h2>100% Responsive</h2>
-          <p>{`No matter which the device you're on, our site is fully responsive and stories look 
+          <p>{`No matter which the device you're on, our site is fully responsive and work look 
             beautiful on any screen.`}
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function Home() {
           <Image src={noLimit} alt="" />
           <h2>No Photo Upload Limit</h2>
           <p>Our tool has no limits on uploads or bandwidth. Freely upload in bulk and share all 
-            of your stories in one go.
+            of your work in one go.
           </p>
         </div>
         <div className={styles.box}>

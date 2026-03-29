@@ -13,7 +13,7 @@ import { useEffect, useContext } from "react";
 import { LangContext } from "../components/navContext";
 import { dictionary } from "../utils/data";
 import GradientSection from "../components/gradientSection";
-import styles from "@/app/lib/styles/features.module.css";
+import styles from "@/app/lib/styles/services.module.css";
 import Image from "next/image";
 import Attract from "../components/attract";
 
@@ -22,43 +22,43 @@ export default function Features() {
     const {lang} = useContext(LangContext);
 
     return (
-        <div className={styles.features}>
+        <div className={styles.services}>
             <GradientSection 
-            title={dictionary.features.gradient.h1[lang]} 
-            paragraph={dictionary.features.gradient.p[lang]} 
+            title={dictionary.services.gradient.h1[lang]} 
+            paragraph={dictionary.services.gradient.p[lang]} 
             imagePath={craftmanship} 
             invite={false} />
 
             <section className={styles.pros}>
                 <div className={styles.box}>
                     <Image className={styles.img} src={leadership} alt="" />
-                    <h2>{dictionary.features.box1.h2[lang]}</h2>
-                    <p>{dictionary.features.box1.p[lang]}</p>
+                    <h2>{dictionary.services.box1.h2[lang]}</h2>
+                    <p>{dictionary.services.box1.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
                     <Image className={styles.img} src={application} alt="" />
-                    <h2>{dictionary.features.box2.h2[lang]}</h2>
-                    <p>{dictionary.features.box2.p[lang]}</p>
+                    <h2>{dictionary.services.box2.h2[lang]}</h2>
+                    <p>{dictionary.services.box2.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
                     <Image className={styles.img} src={embed} alt="" />
-                    <h2>{dictionary.features.box3.h2[lang]}</h2>
-                    <p>{dictionary.features.box3.p[lang]}</p>
+                    <h2>{dictionary.services.box3.h2[lang]}</h2>
+                    <p>{dictionary.services.box3.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
                     <Image className={styles.img} src={training} alt="" />
-                    <h2>{dictionary.features.box4.h2[lang]}</h2>
-                    <p>{dictionary.features.box4.p[lang]}</p>
+                    <h2>{dictionary.services.box4.h2[lang]}</h2>
+                    <p>{dictionary.services.box4.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
                     <Image className={styles.img} src={responsive} alt="" />
-                    <h2>{dictionary.features.box5.h2[lang]}</h2>
-                    <p>{dictionary.features.box5.p[lang]}</p>
+                    <h2>{dictionary.services.box5.h2[lang]}</h2>
+                    <p>{dictionary.services.box5.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
                     <Image className={styles.img} src={customDomain} alt="" />
-                    <h2>{dictionary.features.box6.h2[lang]}</h2>
-                    <p>{dictionary.features.box6.p[lang]}</p>
+                    <h2>{dictionary.services.box6.h2[lang]}</h2>
+                    <p>{dictionary.services.box6.p[lang]}</p>
                 </div>
             </section>
             <Attract h1={dictionary.attract.h1[lang]} />

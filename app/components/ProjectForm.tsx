@@ -1,10 +1,12 @@
 "use client"
 
 import { useRouter } from 'next/navigation';
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import { createProject, updateProject } from '@/app/actions/projects';
 import { hasError, hasErrors } from '@/lib/typeGuards';
 import Image from 'next/image';
+import { RouteContext, LangContext} from "./navContext";
+import { LangPrefix } from "../utils/models";
 
 import styles from "../lib/styles/projectForm.module.css";
 
@@ -19,6 +21,7 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
   const router = useRouter();
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const {lang, setLang} = useContext(LangContext);
   const [previewUrl, setPreviewUrl] = useState<string | null>(
     initialData?.imageUrl || null
   );
@@ -69,9 +72,18 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
     console.log("file : ", file);
 
     if (file) {
-      setImageName(file.name);
-      const url = URL.createObjectURL(file);
-      setPreviewUrl(url);
+      if(file.size > 1024 * 1024) { //to check if image is gretter than 1Mo
+        const imageSizeError = {
+          fr: "L'image séléctionnée fait plus d'1Mo",
+          en: "Image size was greater than 1Mo"
+        }
+        setErrors({image: imageSizeError[lang]});
+      }else{
+        setErrors({image: ""});
+        setImageName(file.name);
+        const url = URL.createObjectURL(file);
+        setPreviewUrl(url);
+      }
     }
   }
 
@@ -165,7 +177,6 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
               accept="image/jpeg,image/png,image/gif,image/webp"
               onChange={handleImageChange}
             />
-            
             {errors.image && (
               <p className={styles.error}>{errors.image}</p>
             )}

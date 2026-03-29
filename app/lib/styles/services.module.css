@@ -1,4 +1,4 @@
-.features .pros {
+.services .pros {
   padding: 5vw 6vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -63,7 +63,7 @@
 
 @media only screen and (max-width: 700px) {
 
-  .features .pros {
+  .services .pros {
     padding: 5vw 6vh;
     grid-template-columns: repeat(auto-fill, minmax(min(275px, 50dvw), 1fr));;
   }

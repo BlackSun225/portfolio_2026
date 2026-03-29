@@ -4,11 +4,11 @@ export const dictionary = {
         en: "Return home"
     },
     navbar: {
-        stories: {
+        work: {
             fr: "PROJETS",
             en: "WORK"
         },
-        features: {
+        services: {
             fr: "SERVICES",
             en: "SERVICES"
         },
@@ -75,7 +75,7 @@ export const dictionary = {
         }
         
     },
-    features: {
+    services: {
         gradient: {
             h1: {
                 fr: "Mes Services",

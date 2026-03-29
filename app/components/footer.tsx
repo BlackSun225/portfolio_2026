@@ -1,11 +1,8 @@
 "use client"
 
-// import arrow from "@/public/arrow.svg";
 import twitter from "@/public/twitter.svg";
-import instagram from "@/public/instagram.svg";
 import linkedIn from "@/public/linkedin.png";
 import tiktok from "@/public/tiktok.png";
-// import pinterest from "@/public/pinterest.svg";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../lib/styles/footer.module.css";
@@ -14,7 +11,6 @@ import { useContext} from "react";
 import { dictionary } from "../utils/data";
 
 import Cta from "./cta";
-import { link } from "fs";
 
 export default function Footer() {
   const {current} = useContext(RouteContext);
@@ -27,7 +23,6 @@ export default function Footer() {
             <Image className={styles.logo} fill loading="eager" alt="" src="/logo.svg"  /> 
         </Link>
         <div>
-          {/* <Link href="https://www.pinterest.com"><Image src={pinterest} alt="" /></Link> */}
           <Link href="https://www.tiktok.com"><Image src={tiktok} width="22" alt="" /></Link> 
           <Link href="https://www.linkedin.com"><Image src={linkedIn} width="20" alt="" /></Link>
           <Link href="https://www.x.com"><Image src={twitter} alt="" /></Link>      
@@ -35,11 +30,11 @@ export default function Footer() {
       </div>
       <div className={styles.right}>
         <ul>
-            <li className={current == "stories" ? styles.active : ''} >
-              <Link href="/stories">{dictionary.navbar.stories[lang]}</Link>
+            <li className={current == "work" ? styles.active : ''} >
+              <Link href="/work">{dictionary.navbar.work[lang]}</Link>
             </li>
-            <li className={current == "features"  ? styles.active : ''} >
-              <Link href="/features">{dictionary.navbar.features[lang]}</Link>
+            <li className={current == "services"  ? styles.active : ''} >
+              <Link href="/services">{dictionary.navbar.services[lang]}</Link>
             </li>
             <li className={current == "pricing"  ? styles.active : ''} >
               <Link href="/pricing">{dictionary.navbar.pricing[lang]}</Link>

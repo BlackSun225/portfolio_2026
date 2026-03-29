@@ -3,7 +3,7 @@ html {
   transition: all linear 1s;
 }
 
-/* .stories {
+/* .work {
   padding-top: 6rem;
 } */
 
@@ -267,7 +267,7 @@ html {
 }
 
 
-.stories .imagesTitles {
+.work .imagesTitles {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

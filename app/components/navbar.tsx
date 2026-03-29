@@ -1,11 +1,11 @@
 'use client'
 
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../lib/styles/navbar.module.css";
 import { RouteContext, LangContext} from "./navContext";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname} from "next/navigation";
 import { dictionary } from "../utils/data";
 // import Cta from "./cta";
 // import germany from "@/public/germany.png";
@@ -42,11 +42,11 @@ export default function Navbar() {
         <Image fill loading="eager" alt="" src="/logo.svg" /> 
       </Link>
       <ul className={styles.desk} >
-        <li className={current == "stories" ? styles.active : ''} >
-          <Link href="/stories">{dictionary.navbar.stories[lang]}</Link>
+        <li className={current == "work" ? styles.active : ''} >
+          <Link href="/work">{dictionary.navbar.work[lang]}</Link>
         </li>
-        <li className={current == "features"  ? styles.active : ''} >
-          <Link href="/features">{dictionary.navbar.features[lang]}</Link>
+        <li className={current == "services"  ? styles.active : ''} >
+          <Link href="/services">{dictionary.navbar.services[lang]}</Link>
         </li>
         <li className={current == "pricing"  ? styles.active : ''} >
           <Link href="/pricing">{dictionary.navbar.pricing[lang]}</Link>
@@ -88,11 +88,11 @@ export default function Navbar() {
         <div>
         </div>
         <ul >
-          <li className={current == "stories" ? styles.active : ''} >
-            <Link href="/stories">{dictionary.navbar.stories[lang]}</Link>
+          <li className={current == "work" ? styles.active : ''} >
+            <Link href="/work">{dictionary.navbar.work[lang]}</Link>
           </li>
-          <li className={current == "features" ? styles.active : ''} >
-            <Link href="/features">{dictionary.navbar.features[lang]}</Link>
+          <li className={current == "services" ? styles.active : ''} >
+            <Link href="/services">{dictionary.navbar.services[lang]}</Link>
           </li>
           <li className={current == "pricing" ? styles.active : ''} >
             <Link href="/pricing">{dictionary.navbar.pricing[lang]}</Link>

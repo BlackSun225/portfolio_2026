@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Card from '../components/card';
 import { DeleteButton } from '@/app/components/DeleteButton';
 import BorderButton from '../components/borderButton';
-import styles from "../lib/styles/stories.module.css";
+import styles from "../lib/styles/work.module.css";
 
 // This is a Server Component - fetches data directly from DB
 export default async function ProjectsPage() {
