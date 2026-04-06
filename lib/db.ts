@@ -11,13 +11,8 @@ export async function connectToDatabase() {
     await sequelizeInstance.authenticate()
     console.log('✅ Database connected successfully')
     
-    // Sync models with database (in development)
-    if (process.env.NODE_ENV === 'development') {
-      await sequelizeInstance.sync({ alter: true })
-      console.log('📊 Database synced')
-    }else{
-      await sequelizeInstance.sync();
-    }
+    await sequelizeInstance.sync({ alter: true })
+    console.log('📊 Database synced')
     
     return true
   } catch (error) {
