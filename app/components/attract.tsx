@@ -1,8 +1,7 @@
-import arrow from "@/public/arrow.svg";
 
 import styles from "../lib/styles/attract.module.css";
-import Image from "next/image";
-import Link from "next/link";
+// import Image from "next/image";
+// import Link from "next/link";
 
 import Cta from "./cta";
 

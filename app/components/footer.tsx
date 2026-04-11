@@ -1,8 +1,6 @@
 "use client"
 
-import twitter from "@/public/twitter.svg";
-import linkedIn from "@/public/linkedin.png";
-import tiktok from "@/public/tiktok.png";
+
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../lib/styles/footer.module.css";
@@ -11,6 +9,10 @@ import { useContext} from "react";
 import { dictionary } from "../utils/data";
 
 import Cta from "./cta";
+
+const twitter = "/twitter.svg";
+const linkedIn = "/linkedin.png";
+const tiktok = "/tiktok.png";
 
 export default function Footer() {
   const {current} = useContext(RouteContext);
@@ -23,9 +25,9 @@ export default function Footer() {
             <Image className={styles.logo} fill loading="eager" alt="" src="/logo.svg"  /> 
         </Link>
         <div>
-          <Link href="https://www.tiktok.com"><Image src={tiktok} width="22" alt="" /></Link> 
-          <Link href="https://www.linkedin.com"><Image src={linkedIn} width="20" alt="" /></Link>
-          <Link href="https://www.x.com"><Image src={twitter} alt="" /></Link>      
+          <Link href="https://www.tiktok.com"><Image src={tiktok} width="22" height="20" alt="" /></Link> 
+          <Link href="https://www.linkedin.com"><Image src={linkedIn} width="20" height="20"  alt="" /></Link>
+          <Link href="https://www.x.com"><Image src={twitter} width="20" height="20" alt="" /></Link>      
         </div>
       </div>
       <div className={styles.right}>

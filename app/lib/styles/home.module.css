@@ -43,9 +43,10 @@
   overflow-y: hidden;
 }
 
-.two .left img {
+.two .left .img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 3/2;
+  position: relative;
 }
 
 .two h2, 
@@ -85,10 +86,12 @@
   overflow-y: hidden;
 }
 
-.three .right img {
+.three .right .img {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 1;
+  position: relative;
+  overflow: hidden;
 }
 
 .two h2,  .three h2 {

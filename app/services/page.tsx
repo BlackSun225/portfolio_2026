@@ -1,14 +1,5 @@
 "use client"
 
-
-import responsive from "@/public/responsive.svg";
-import embed from "@/public/embed.svg";
-import customDomain from "@/public/custom-domain.svg";
-import training from "@/public/training.png";
-import craftmanship from "@/public/craftmanship.jpg";
-import application from "@/public/application.png";
-import leadership from "@/public/leadership.png";
-
 import { useEffect, useContext } from "react";
 import { LangContext } from "../components/navContext";
 import { dictionary } from "../utils/data";
@@ -17,6 +8,13 @@ import styles from "@/app/lib/styles/services.module.css";
 import Image from "next/image";
 import Attract from "../components/attract";
 
+const responsive = "/responsive.svg";
+const embed = "/embed.svg";
+const customDomain = "/custom-domain.svg";
+const training = "/training.png";
+const craftmanship = "/craftmanship.jpg";
+const application = "/application.png";
+const leadership = "/leadership.png";
 
 export default function Features() {
     const {lang} = useContext(LangContext);
@@ -31,32 +29,44 @@ export default function Features() {
 
             <section className={styles.pros}>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={leadership} alt="" />
+                    <div className={styles.img} >
+                        <Image fill src={leadership} alt="" />
+                    </div>
                     <h2>{dictionary.services.box1.h2[lang]}</h2>
                     <p>{dictionary.services.box1.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={application} alt="" />
+                    <div className={styles.img} >
+                        <Image fill src={application} alt="" />
+                    </div>
                     <h2>{dictionary.services.box2.h2[lang]}</h2>
                     <p>{dictionary.services.box2.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={embed} alt="" />
+                    <div className={styles.img} >
+                        <Image fill src={embed} alt="" />
+                    </div>
                     <h2>{dictionary.services.box3.h2[lang]}</h2>
                     <p>{dictionary.services.box3.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={training} alt="" />
+                    <div className={styles.img}>
+                        <Image fill src={training} alt="" />
+                    </div>
                     <h2>{dictionary.services.box4.h2[lang]}</h2>
                     <p>{dictionary.services.box4.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={responsive} alt="" />
+                    <div className={styles.img}>
+                        <Image fill src={responsive} alt="" />
+                    </div>
                     <h2>{dictionary.services.box5.h2[lang]}</h2>
                     <p>{dictionary.services.box5.p[lang]}</p>
                 </div>
                 <div className={styles.box}>
-                    <Image className={styles.img} src={customDomain} alt="" />
+                    <div className={styles.img} >
+                        <Image fill src={customDomain} alt="" />
+                    </div>
                     <h2>{dictionary.services.box6.h2[lang]}</h2>
                     <p>{dictionary.services.box6.p[lang]}</p>
                 </div>

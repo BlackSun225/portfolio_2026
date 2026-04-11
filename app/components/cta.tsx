@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import arrow from "@/public/arrow.svg";
+const arrow = "/arrow.svg";
 
 import styles from "../lib/styles/cta.module.css";
 import { LangContext } from "./navContext";
@@ -14,7 +14,7 @@ export default function Cta() {
     return (
         <Link className={styles.invite} href="mailto:yohananchris@outlook.com">
             <span>{dictionary.actionButton[lang]}</span>
-            <Image alt="" src={arrow} />
+            <Image width="40" height="12" alt="" src={arrow} />
         </Link>
     );
 }

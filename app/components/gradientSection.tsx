@@ -1,16 +1,15 @@
-import arrow from "@/public/arrow.svg";
-
 import Cta from "./cta";
 
 import styles from "../lib/styles/gradientSection.module.css";
 
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
+import Image from "next/image";
+
+// const arrow = "/arrow.svg";
 
 export default function GradientSection({
     title, paragraph, imagePath, invite
 } : {
-    title: string, paragraph: string, imagePath: StaticImageData, invite: boolean
+    title: string, paragraph: string, imagePath: string, invite: boolean
 }) {
   return (
     <section className={styles.one}>
@@ -27,7 +26,7 @@ export default function GradientSection({
 
         </div>
         <div className={styles.right}>
-          <Image alt="" src={imagePath} />
+          <Image fill alt="" src={imagePath} />
         </div>
     </section>
   );

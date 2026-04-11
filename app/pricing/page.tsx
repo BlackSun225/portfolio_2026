@@ -1,15 +1,17 @@
 "use client"
-import happy from "@/public/happy.jpg"
 
-import { useEffect, useContext } from "react";
+
+import { useContext } from "react";
 import { LangContext } from "../components/navContext";
 import { dictionary } from "../utils/data";
 import GradientSection from "../components/gradientSection";
 import Attract from "../components/attract";
 import Warning from "../components/warning";
-import PricingBtn from "../components/pricingBtn";
+// import PricingBtn from "../components/pricingBtn";
 
 import styles from "../lib/styles/pricing.module.css";
+
+const happy = "/happy.jpg"
 
 export default function Pricing() {
 

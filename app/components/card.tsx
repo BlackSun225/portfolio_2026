@@ -1,6 +1,6 @@
 "use client"
 
-import arrow from "@/public/arrow.svg";
+
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../lib/styles/card.module.css";
@@ -9,6 +9,7 @@ import { LangContext } from "./navContext";
 import { dictionary } from "../utils/data";
 import type { Project } from "@/lib/types";
 
+const arrow = "/arrow.svg";
 
 export default function Card({
     project, keyId, date, parentRef
@@ -30,7 +31,7 @@ export default function Card({
         <h2>{project.technologies.join(" - ")}</h2>
         <div className={styles.line}></div>
         <div className={styles.action}>
-          <span>{dictionary.cardActionText[lang]}</span> <Image className={styles.img} src={arrow} alt="" />
+          <span>{dictionary.cardActionText[lang]}</span> <Image width="40" height="12" src={arrow} alt="" />
         </div>
       </div>
       <div className={styles.progress}></div> 

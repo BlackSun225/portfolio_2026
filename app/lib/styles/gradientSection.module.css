@@ -38,13 +38,14 @@
 .one .right {
   display: flex;
   width: 53%;
+  height: auto;
   overflow: hidden;
   position: relative;
   aspect-ratio: 3/2;
   overflow-y: hidden;
 }
 
-.one .right > img{
+.one .right > .img{
   display: block;
   width: 100%;
   height: auto;

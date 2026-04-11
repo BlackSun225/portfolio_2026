@@ -17,7 +17,9 @@
 .pros .box .img {
   display: block;
   width: 80px;
-  height: auto;
+  position: relative;
+  height: 80px;
+  /* height: auto; */
 }
 
 .pros .box h2 {

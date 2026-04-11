@@ -7,12 +7,12 @@ import styles from "../lib/styles/navbar.module.css";
 import { RouteContext, LangContext} from "./navContext";
 import { usePathname} from "next/navigation";
 import { dictionary } from "../utils/data";
-// import Cta from "./cta";
-// import germany from "@/public/germany.png";
-import france from "@/public/france.png";
-import usa from "@/public/usa.png";
+
 import { LangPrefix } from "../utils/models";
 
+// const germany = "/germany.png";
+const france = "/france.png";
+const usa = "/usa.png";
 
 export default function Navbar() {
 
@@ -57,18 +57,18 @@ export default function Navbar() {
         <input className={styles.dropTrigger} type="checkbox" />
         <div className={styles.head}>
           <span className={styles.headText} > {lang.toUpperCase()} </span>
-          <Image className={styles.headImg} width="20" src={lang == "fr" ? france : usa } alt="language flag" />
+          <Image className={styles.headImg} width="20" height="19" src={lang == "fr" ? france : usa } alt="language flag" />
           <span className={styles.arrow}></span>
         </div>
 
         <ul className={styles.body} >
           <li className={`${styles.row} ${lang == 'fr' && styles.active}`} onClick={() => changeLang("fr")} >
             <span>FR</span>
-            <Image width="20" src={france} alt="france" />
+            <Image width="20" height="19" src={france} alt="france" />
           </li>
           <li className={`${styles.row} ${lang == 'en' && styles.active}`} onClick={() => changeLang("en")} >
             <span>EN</span>
-            <Image width="20" src={usa} alt="usa" />
+            <Image width="20" height="19" src={usa} alt="usa" />
           </li>
         </ul>
       </label>
