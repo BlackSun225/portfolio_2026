@@ -1,6 +1,5 @@
-import { StaticImageData } from "next/image"
+import { StaticImageData } from 'next/image'
 
-// types/images.d.ts
 declare module '*.svg' {
   const content: StaticImageData
   export default content
