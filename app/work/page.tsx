@@ -3,6 +3,8 @@ import { Project } from '@/lib/db';
 import ProjectList from "../components/ProjectList";
 import StoriesLoading from './loading';
 
+export const dynamic = 'force-dynamic'
+
 async function StoriesCollection() {
     const projects = await Project.findAll({
         order: [['createdAt', 'DESC']],
