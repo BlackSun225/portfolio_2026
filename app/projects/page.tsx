@@ -5,6 +5,8 @@ import { DeleteButton } from '@/app/components/DeleteButton';
 import BorderButton from '../components/borderButton';
 import styles from "../lib/styles/work.module.css";
 
+export const dynamic = 'force-dynamic'
+
 // This is a Server Component - fetches data directly from DB
 export default async function ProjectsPage() {
   const projects = await Project.findAll({

@@ -6,7 +6,7 @@ try {
   require.resolve('pg');
   console.log('✅ PostgreSQL driver (pg) is installed');
 } catch (error) {
-  console.error('❌ PostgreSQL driver (pg) is NOT installed');
+  console.error('❌ PostgreSQL driver (pg) is NOT installed : ', error);
   console.error('Please run: pnpm add pg');
   throw new Error('Missing required dependency: pg');
 }
@@ -27,15 +27,15 @@ const sequelizeInstance = new Sequelize(
 
 
 // Test the connection
-async function testConnection() {
-  try {
-    await sequelizeInstance.authenticate();
-    console.log('✅ Database connection established successfully.');
-  } catch (error) {
-    console.error('❌ Unable to connect to the database:', error);
-  }
-}
+// async function testConnection() {
+//   try {
+//     await sequelizeInstance.authenticate();
+//     console.log('✅ Database connection established successfully.');
+//   } catch (error) {
+//     console.error('❌ Unable to connect to the database:', error);
+//   }
+// }
 
-testConnection();
+// testConnection();
 
 export { sequelizeInstance };

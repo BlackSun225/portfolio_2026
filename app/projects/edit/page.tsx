@@ -9,6 +9,8 @@ interface PageProps {
   };
 }
 
+export const dynamic = 'force-dynamic'
+
 export default async function EditProjectPage({ params }: PageProps) {
   const project = await Project.findByPk(params.id);
   
