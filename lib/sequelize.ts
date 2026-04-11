@@ -25,17 +25,4 @@ const sequelizeInstance = new Sequelize(
   }
 );
 
-
-// Test the connection
-// async function testConnection() {
-//   try {
-//     await sequelizeInstance.authenticate();
-//     console.log('✅ Database connection established successfully.');
-//   } catch (error) {
-//     console.error('❌ Unable to connect to the database:', error);
-//   }
-// }
-
-// testConnection();
-
 export { sequelizeInstance };
