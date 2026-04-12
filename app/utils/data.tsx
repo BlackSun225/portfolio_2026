@@ -13,7 +13,7 @@ export const dictionary = {
             en: "SERVICES"
         },
         pricing: {
-            fr: "TARIF",
+            fr: "BUDGET",
             en: "PRICING"
         }
     },
