@@ -81,14 +81,24 @@
 }
 
 @media only screen and (max-width: 700px) { 
+  .footer .imgContainer {
+    margin-bottom: 1.5rem;
+  }
 
   .footer, .footer .right {
     flex-direction: column;
   }
 
   .footer .right {
-    row-gap: 3rem;
+    row-gap: 2rem;
     align-items: center;
+  }
+
+  .footer .right ul {
+    width: 100%;
+    padding-top: 2rem;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
 
   .footer .right ul li {
@@ -99,6 +109,7 @@
 
   .footer .right .lastDivRight {
     align-items: center;
+    row-gap: 1.5rem;
   }
 
 }

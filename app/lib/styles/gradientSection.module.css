@@ -79,21 +79,33 @@
     flex: 1;
   }
 
+  .one .left {
+    padding: 1rem 0;
+    flex-direction: column;
+    padding: 1.5rem 6dvw;
+  }
+
+  .one .left .text {
+    padding: 0;
+  }
+
   .one h1 {
-    font-size: clamp(1.3rem, 5vw, 2rem);
-  
+    font-size: clamp(1.2rem, 4.7vw, 2rem);
+    /* text-align: center; */
   }
 
   .one p {
+    width: 100%;
     font-size: clamp(1rem, 2.2vw, 1.7rem);
+    /* text-align: center; */
   }
 
   .horizontalGradient {
     display: block;
     width: 33%;
-    height: 5px;
+    height: 4px;
     position: absolute;
-    left: 5dvw;
+    left: 6dvw;
     top: 0;
     background: linear-gradient(to right, var(--pastelOrange), var(--violet), var(--blue), var(--blue));
   }

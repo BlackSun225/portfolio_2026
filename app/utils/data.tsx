@@ -28,16 +28,14 @@ export const dictionary = {
                 en: "WEB AND MOBILE FULLSTACK DEVELOPER"
             },
             p: {
-                fr: `Je suis Doudjo Christ FOUSSENI, développeur web et mobile fullstack Ivoirien.
-                La technologie est un outil puissant qui entre de bonnes mains, permet d'améliorer la qualité de vie des hommes et leur productivité. 
-                Je m'appuie donc sur mes compétences, acquises au fil des années en travaillant sur des projets aussi complexes que variés, et 
-                mon expérience, pour concevoir la solution adaptée à vos objectifs.
+                fr: `Doudjo Christ FOUSSENI, développeur fullstack Ivoirien.
+                La technologie est un outil puissant qui peut améliorer la qualité de vie et la productivité. 
+                Je m'appuie sur mes compétences et mon expérience, pour concevoir la solution adaptée à vos objectifs.
                 Echangeons nos expériences, notre savoir, et enrichissons nous mutuellement.
                 `,
-                en: `I am Christ Doudjo FOUSSENI, ivorian web and mobile fullstack developer. 
-                Technology is a powerful tool which i skilled hands, improve life of humans and their productivity. I use my skills, acquired while working 
-                on various projects, and my experience, to build the solution that fit you needs.
-                Let's trade experience, knowledge and learn from each other culture. 
+                en: `I am Christ Doudjo FOUSSENI, ivorian fullstack developer. 
+                Technology is a powerful tool which can improve humans's life and productivity. I use my skills and my experience, to build the solution that fit you needs.
+                Let's trade experience, knowledge and learn from each other. 
                 `
             }
         },
@@ -57,7 +55,7 @@ export const dictionary = {
                 en: `
                 🧗🏾‍♂️4years practice
                 👨🏾‍💻+100 UI made
-                 💎Processed huge data (many millions of row) of a telecom company
+                 💎Processed huge data (millions of row) of a telecom company
                  💎+20 API made
                 💎 Virtual Assistant with RaspBerry PI, Speaker and AI.
                 `
@@ -121,8 +119,8 @@ export const dictionary = {
                 en: "Tailored support "
             },
             p: {
-                fr: `Je vous accompagne pour choisir la solution adaptée à votre projet, choisir les fonctionalités, technologies qui 
-                apporteront un plus qualitativement. `,
+                fr: `Je vous accompagne pour choisir la solution adaptée à vos besoins, les fonctionalités, technologies qui 
+                apporteront un plus. `,
                 en: `I support you to find the solution that best fit your needs, choosing functionalies, 
                 technologies which bring more quality`
             }
@@ -143,7 +141,7 @@ export const dictionary = {
                 en: "Online presence"
             },
             p: {
-                fr: `Apparaitre dans les résultats de recherche, être visible sur google maps et ou sur les réseaux sociaux adaptés à votre audience.`,
+                fr: `Apparaitre dans les résultats de recherche, être visible sur google maps et les réseaux sociaux adaptés à votre audience.`,
                 en: "Visible in search results, on google maps or social networks regarding your audience"
             }
         },
@@ -153,9 +151,9 @@ export const dictionary = {
                 en: "Formation"
             },
             p: {
-                fr: `Utiliser les réseaux sociaux pour obtenir les bonnes informations et trouver les bons mots clés. 
+                fr: `Utiliser les réseaux sociaux pour trouver les mots clés. 
                 Initier vos enfants à la conception d'application de manière ludique. 
-                Découvrir et prendre en main des outils pour améliorer votre productivité. `,
+                Découvrir des outils pour améliorer votre productivité. `,
                 en: `Use social networks to find useful informations and keywords. 
                 Introduce kids to application design in a fun way.
                 Discover and use tools to improve your productivity`

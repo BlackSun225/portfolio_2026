@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { Project } from '@/lib/db';
 import ProjectList from "../components/ProjectList";
 import StoriesLoading from './loading';
+import styles from "../lib/styles/loading.module.css";
 
 export const dynamic = 'force-dynamic'
 
@@ -13,7 +14,7 @@ async function StoriesCollection() {
     return (
         <main>
             {projects.length === 0 ? (
-                <div className={""}>
+                <div className={styles.loading}>
                     <p className={""}>No projects yet. Create your first project!</p>
                 </div>
             ) : 

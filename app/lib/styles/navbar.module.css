@@ -10,7 +10,7 @@
 
 .langDropdown {
   position: absolute;
-  left: 66%;
+  right: 16rem;
   top: 0;
   z-index: 1;
   background: white;
@@ -293,5 +293,9 @@
 @media only screen and (max-width: 800px) {
   .desk, .nav .desk {
     display: none;
+  }
+
+  .langDropdown {
+    right: 6rem;
   }
 }
