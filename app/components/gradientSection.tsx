@@ -18,7 +18,7 @@ export default function GradientSection({
 
           <div className={styles.text}> 
             <div className={`${styles.verticalGradient} ${styles.desk}`}></div> 
-            <h1>{title}</h1>
+            <h1>{title.toUpperCase()}</h1>
             <p>{paragraph}</p>
 
             {invite ? <Cta /> : null}
