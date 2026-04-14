@@ -29,6 +29,20 @@ const jsonLd = {
   '@type': 'Person',
   name: 'Christ Doudjo FOUSSENI',
   jobTitle: 'Full-Stack Developer',
+  description: "Full-stack software developer with 3+ years of experience building scalable web and mobile applications. Currently pivoting into well documented application, combining systems programming (Go)",
+  knowsAbout: [
+    "React Native",
+    "Flutter",
+    "Reactjs",
+    "Vuejs",
+    "Next.js",
+    "Go (Golang)",
+    "Data Security (Libsodium)",
+    "Javascript",
+    "Typescript",
+    "HTML",
+    "CSS"
+  ],
   url: 'https://maisondoudjo.com',
   sameAs: [
     'https://github.com/BlackSun225',
