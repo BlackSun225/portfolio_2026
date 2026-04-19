@@ -1,14 +1,25 @@
 import { Project } from '@/lib/db';
-import Link from 'next/link';
+import { Suspense } from 'react';
 import Card from '../components/card';
 import { DeleteButton } from '@/app/components/DeleteButton';
 import BorderButton from '../components/borderButton';
 import styles from "../lib/styles/work.module.css";
+import Loading from '../components/loading';
 
 export const dynamic = 'force-dynamic'
 
 // This is a Server Component - fetches data directly from DB
 export default async function ProjectsPage() {
+  return (
+    <Suspense fallback={<Loading />} >
+      <FetchProjectsPage />
+    </Suspense>
+
+  );
+}
+
+
+async function FetchProjectsPage() {
   const projects = await Project.findAll({
     order: [['createdAt', 'DESC']],
   });
@@ -34,19 +45,7 @@ export default async function ProjectsPage() {
             project = project.toJSON();
 
             return (
-              <Card key={project.id} project={project} />
-              // <div key={project.id} className="relative group">
-              //   {/* Admin actions - visible on hover */}
-              //   <div className="absolute top-2 right-2 flex space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
-              //     <Link
-              //       href={`/projects/${project.id}/edit`}
-              //       className="bg-yellow-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600"
-              //     >
-              //       Edit
-              //     </Link>
-              //     <DeleteButton projectId={project.id} />
-              //   </div>
-              // </div>
+              <Card key={project.id} project={project} edit={true} />
             );
             
           })}

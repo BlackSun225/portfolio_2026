@@ -4,8 +4,7 @@ const loading = "/progress.gif"
 
 import styles from "../lib/styles/loading.module.css";
 
-export default function StoriesLoading() {
-
+export default function Loading() {
     return(
         <div className={styles.loading}>
             <Image src={loading} width="300" height="300" alt="loading data" />

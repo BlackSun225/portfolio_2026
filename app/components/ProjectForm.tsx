@@ -5,8 +5,8 @@ import { useState, useRef, useContext } from 'react';
 import { createProject, updateProject } from '@/app/actions/projects';
 import { hasError, hasErrors } from '@/lib/typeGuards';
 import Image from 'next/image';
-import { RouteContext, LangContext} from "./navContext";
-import { LangPrefix } from "../utils/models";
+import { LangContext} from "./navContext";
+// import { LangPrefix } from "../utils/models";
 
 import styles from "../lib/styles/projectForm.module.css";
 
@@ -45,7 +45,7 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
 
     console.log("result : ", result);
     if (result.success) {
-      router.push('/projects');
+      router.push('/portfolio');
       router.refresh();
     } else {
       // Use type guards to check the error type
@@ -88,10 +88,9 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
   }
 
 
-
   return (
     <section className={styles.projectForm}>
-      <h1>Create New Project</h1>
+      <h1>{initialData ? "Edit project" : "Create New Project"}</h1>
       <div className={styles.fakeBody}>
         <form action={handleSubmit} className={styles.form}>
           {/* Form error message */}
@@ -199,7 +198,8 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
             </button>
             
             <button
-              type="button"
+              type="button" 
+              disabled={isSubmitting}
               onClick={() => router.back()}
               className={styles.backBtn}
             >

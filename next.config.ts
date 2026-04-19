@@ -1,13 +1,14 @@
 import type { NextConfig } from "next";
+const IMAGE_SERVER_URL = process.env.IMAGE_SERVER_URL || "http://localhost:2700/"
 
 const nextConfig: NextConfig = {
   images: {
     dangerouslyAllowLocalIP: process.env.NODE_ENV === "development",
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'your-vps-ip',
-        port: '3001',
+        protocol: 'https',
+        hostname: IMAGE_SERVER_URL,
+        // port: '3001',
         pathname: '/images/**',
       },
       {
@@ -20,6 +21,12 @@ const nextConfig: NextConfig = {
         protocol: 'http',
         hostname: 'localhost',
         port: '3000',
+        pathname: '/images/**',
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '2700',
         pathname: '/images/**',
       }
     ],

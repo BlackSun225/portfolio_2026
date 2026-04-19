@@ -12,29 +12,32 @@ import type { Project } from "@/lib/types";
 const arrow = "/arrow.svg";
 
 export default function Card({
-    project, keyId, date, parentRef
+    project, date, parentRef, edit = false
 }: {
     project: Project,
-    keyId?: string,
     date?: string,
     parentRef?: string,
+    edit?: boolean
 }) {
 
   const {lang} = useContext(LangContext);
 
   return (
-    <Link href={project.urlPath} target="_blank" className={`${parentRef && parentRef == keyId ? styles.activeCard : ''} ${styles.card}`} >
+    <div className={`${parentRef && parentRef == project.id.toString() ? styles.activeCard : ''} ${styles.card}`} >
       <Image priority fill className={styles.img} alt="" src={project.imageUrl} />
-      <div className={styles.infos}>
+      <Link href={project.urlPath} target="_blank" className={styles.infos}>
         <strong>{date ? new Date(date).toDateString() : ""}</strong>
         <h1>{project.title}</h1>
         <h2>{project.technologies.join(" - ")}</h2>
-        <div className={styles.line}></div>
         <div className={styles.action}>
-          <span>{dictionary.cardActionText[lang]}</span> <Image width="40" height="12" src={arrow} alt="" />
+          <span>{dictionary.cardActionText[lang]}</span> 
+          <Image className={styles.img} width="40" height="12" src={arrow} alt="" />
         </div>
-      </div>
+      </Link>
+      {
+        edit && <Link className={styles.editDelete} href={`/portfolio/edit/${project.id}`} >✒️</Link>
+      }
       <div className={styles.progress}></div> 
-    </Link>
+    </div>
   );
 }

@@ -12,6 +12,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://maisondoudjo.com'),
   title: "Maison Doudjo - @BlackSun225",
   description: "Fullstack developer portfolio",
   keywords: [

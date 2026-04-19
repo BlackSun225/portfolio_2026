@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Project } from '@/lib/db';
 import ProjectList from "../components/ProjectList";
-import StoriesLoading from './loading';
+import Loading from '../components/loading';
 import styles from "../lib/styles/loading.module.css";
 
 export const dynamic = 'force-dynamic'
@@ -29,10 +29,10 @@ export default async function Stories() {
     return (
         <>
             {/* I use suspense to be sure to display the nav and footer component instantly 
-            and show the loading component between the nav and footer component while the work collection load.
-            All the tag or component above the suspense will be shown directly even if 
-            the work loading isn't available*/}
-            <Suspense fallback={<StoriesLoading />}>
+            and show the loading component between the nav and footer component while the work 
+            collection load. All the tag or component above the suspense will be shown directly 
+            even if the work loading isn't available*/}
+            <Suspense fallback={<Loading />}>
                 <StoriesCollection />
             </Suspense>
         </>

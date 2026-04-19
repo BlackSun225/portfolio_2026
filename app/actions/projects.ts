@@ -127,6 +127,7 @@ export async function updateProject(id: number, formData: FormData): Promise<Act
     if (!project) {
       return { success: false, error: 'Project not found' };
     }
+    console.log("found project : ", project.dataValues);
 
     // Handle image if new one uploaded
     const imageFile = formData.get('image') as File;
@@ -136,7 +137,8 @@ export async function updateProject(id: number, formData: FormData): Promise<Act
       console.log('📤 Uploading new image...');
       
       // Delete old image
-      const oldFilename = project.imageUrl.split('/').pop();
+      console.log("prev project image url : ", project.dataValues.imageUrl);
+      const oldFilename = project.dataValues.imageUrl.split('/').pop();
       if (oldFilename) {
         await deleteImage(oldFilename).catch(() => {
           console.log('⚠️ Could not delete old image');

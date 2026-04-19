@@ -36,7 +36,8 @@
   left: 0;
   top: 0;
   transition: all 0.4s linear; 
-  cursor: pointer;
+  z-index: 1;
+  text-decoration: none;
 }
 
 .infos h1 {
@@ -54,18 +55,16 @@
   text-shadow: 0 0 4px rgb(0, 0, 0);
 }
 
-.line {
-  width: 100%;
-  height: 1px;
-  background: rgba(128, 128, 128, 0.829);
-  margin: 0.9rem 0;
-}
-
 .infos .action {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+
+  padding-top: 0.9rem;
+  border-top: 2px solid rgba(128, 128, 128, 0.829);
+  margin-top: 0.9rem;
 }
 
 .infos .action span {
@@ -73,7 +72,6 @@
   color: var(--white);
   text-shadow: 0 0 4px rgba(0, 0, 0);
   letter-spacing: 1px;
-
 }
 
 .infos .action .img {
@@ -81,6 +79,11 @@
   filter: invert(100%);
   width: clamp(1rem, 3.5vw, 3rem);
 }
+
+/* .infos .action:hover .img {
+  transform: translateX(1rem);
+  transition: all 0.5s linear;
+} */
 
 .progress {
   width: 0;
@@ -106,11 +109,16 @@
   justify-items: center;
   align-items: center;
   gap: 1rem;
-  /* z-index: 4; */
+  z-index: 4;
   opacity: 1;
+  background: white;
+  box-shadow: 0 0 5px gray;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem;
 }
 
-.editDelete .img {
+/* .editDelete .img {
   display: block;
   width: 1.2rem;
   cursor: pointer;
@@ -120,4 +128,4 @@
   width: 1.5rem;
   transition: all 0.5s linear;
   filter: drop-shadow(0 0 2px var(--pastelOrange));
-}
+} */
