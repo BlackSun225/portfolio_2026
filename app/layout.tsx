@@ -25,17 +25,17 @@ export const metadata: Metadata = {
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Christ Doudjo FOUSSENI',
-  jobTitle: 'Full-Stack Developer',
-  description: "Full-stack software developer with 3+ years of experience building scalable web and mobile applications. Currently pivoting into well documented application, combining systems programming (Go)",
-  url: 'https://maisondoudjo.com',
-  sameAs: [
+  "@context": 'https://schema.org',
+  "@type": 'Person',
+  "name": 'Christ Doudjo FOUSSENI',
+  "jobTitle": 'Full-Stack Developer',
+  "description": "Full-stack software developer with 3+ years of experience building scalable web and mobile applications. Currently pivoting into well documented application, combining systems programming (Go)",
+  "url": 'https://maisondoudjo.com',
+  "sameAs": [
     'https://github.com/BlackSun225',
     'https://www.linkedin.com/in/yoanan-christ-fousseni-3125711bb'
   ],
-  knowsAbout: [
+  "knowsAbout": [
     "React Native",
     "Flutter",
     'Reactjs', 
@@ -59,10 +59,12 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="js-focus-visible" data-js-focus-visible="">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${dmSans.variable} antialiased`} >
         <NavContextComponent>
           <Navbar />
