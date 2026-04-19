@@ -30,26 +30,22 @@ const jsonLd = {
   name: 'Christ Doudjo FOUSSENI',
   jobTitle: 'Full-Stack Developer',
   description: "Full-stack software developer with 3+ years of experience building scalable web and mobile applications. Currently pivoting into well documented application, combining systems programming (Go)",
-  knowsAbout: [
-    "React Native",
-    "Flutter",
-    "Reactjs",
-    "Vuejs",
-    "Next.js",
-    "Go (Golang)",
-    "Data Security (Libsodium)",
-    "Javascript",
-    "Typescript",
-    "HTML",
-    "CSS"
-  ],
   url: 'https://maisondoudjo.com',
   sameAs: [
     'https://github.com/BlackSun225',
     'https://www.linkedin.com/in/yoanan-christ-fousseni-3125711bb'
   ],
   knowsAbout: [
-    'React', 'Node.js', 'Go', 'Full-stack Development', 'Android Application', 'Web Application'
+    "React Native",
+    "Flutter",
+    'Reactjs', 
+    'Node.js', 
+    'Go (Golang)', 
+    'Full-stack Development', 
+    'Android Application', 
+    'Web Application',
+    "HTML",
+    "CSS"
   ]
 }
 
