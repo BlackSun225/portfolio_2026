@@ -23,21 +23,35 @@ export default function Card({
   const {lang} = useContext(LangContext);
 
   return (
-    <div className={`${parentRef && parentRef == project.id.toString() ? styles.activeCard : ''} ${styles.card}`} >
+    <article className={`${parentRef && parentRef == project.id.toString() ? styles.activeCard : ''} ${styles.card}`} >
       <Image priority fill className={styles.img} alt="" src={project.imageUrl} />
-      <Link href={project.urlPath} target="_blank" className={styles.infos}>
+      <Link title={project.title}
+        href={project.urlPath} target="_blank" 
+        className={styles.infos} 
+        rel="noopener noreferrer" // Essential for security and SEO on external links 
+      >
         <strong>{date ? new Date(date).toDateString() : ""}</strong>
-        <h1>{project.title}</h1>
-        <h2>{project.technologies.join(" - ")}</h2>
+        <h2 className={styles.h1}>{project.title}</h2>
+        <h3 className={styles.techList} >
+          {project.technologies.map((tech, index) => {
+            return (
+              <span className={styles.li} key={index} >{index > 0 && ' • '}{tech}</span>
+            );
+          })}
+        </h3>
         <div className={styles.action}>
-          <span>{dictionary.cardActionText[lang]}</span> 
-          <Image className={styles.img} width="40" height="12" src={arrow} alt="" />
+          <span className={styles.span} >{dictionary.cardActionText[lang]}</span> 
+          <Image 
+            className={styles.img} 
+            width="40" height="12" src={arrow} 
+            alt={`${project.description} - project by a fullstack developer - abidjan`} 
+            />
         </div>
       </Link>
       {
         edit && <Link className={styles.editDelete} href={`/portfolio/edit/${project.id}`} >✒️</Link>
       }
       <div className={styles.progress}></div> 
-    </div>
+    </article>
   );
 }

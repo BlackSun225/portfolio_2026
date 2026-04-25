@@ -14,10 +14,6 @@
   transition: all 0.4s linear;
 }
 
-/* .card:hover {
-  transform: translateY(-5%);
-} */
-
 .card:hover > .img, 
 .activeCard > .img {
   filter: brightness(110%);
@@ -40,7 +36,7 @@
   text-decoration: none;
 }
 
-.infos h1 {
+.infos .h1 {
   color: var(--white);
   font-size: clamp(0.75rem, 1.3dvw, 1.1rem);
   font-weight: 600;
@@ -48,7 +44,17 @@
   text-shadow: 0 0 4px rgb(0, 0, 0);
 }
 
-.infos h2, .infos strong{
+.infos .techList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.infos .techList .li {
+  list-style-type: none;
+  padding-right: 4px;
+}
+
+.infos .techList .li, .infos strong{
   color: var(--grey);
   font-size: clamp(0.7rem, 1.1vw, 0.9rem);
   font-weight: 500;
@@ -67,7 +73,7 @@
   margin-top: 0.9rem;
 }
 
-.infos .action span {
+.infos .action .span {
   font-size: clamp(0.6rem, 1vw, 0.9rem);
   color: var(--white);
   text-shadow: 0 0 4px rgba(0, 0, 0);
@@ -79,11 +85,6 @@
   filter: invert(100%);
   width: clamp(1rem, 3.5vw, 3rem);
 }
-
-/* .infos .action:hover .img {
-  transform: translateX(1rem);
-  transition: all 0.5s linear;
-} */
 
 .progress {
   width: 0;
@@ -118,14 +119,3 @@
   padding: 0.5rem;
 }
 
-/* .editDelete .img {
-  display: block;
-  width: 1.2rem;
-  cursor: pointer;
-}
-
-.editDelete .img:hover{
-  width: 1.5rem;
-  transition: all 0.5s linear;
-  filter: drop-shadow(0 0 2px var(--pastelOrange));
-} */
