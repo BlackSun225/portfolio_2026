@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-const IMAGE_SERVER_URL = process.env.IMAGE_SERVER_URL || "http://localhost:2700/"
+const IMAGE_SERVER_URL = process.env.IMAGE_SERVER_URL || "localhost:2700/"
 
 const nextConfig: NextConfig = {
   images: {
