@@ -30,7 +30,7 @@ async function FetchProjectsPage() {
         <h1>My Projects</h1>
         <div>
           <p>{projects.length} project{projects.length !== 1 ? 's' : ''}</p>
-          <BorderButton text="New Project" to="/projects/new" />
+          <BorderButton text="New Project" to="/portfolio/new" />
         </div>
       </section>
       
@@ -45,7 +45,7 @@ async function FetchProjectsPage() {
             project = project.toJSON();
 
             return (
-              <Card key={project.id} project={project} edit={true} />
+              <Card key={project.id} project={project} edit={true} remove={true} />
             );
             
           })}

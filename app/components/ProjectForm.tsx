@@ -62,6 +62,8 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
       } else {
         setErrors({ form: 'An unexpected error occurred' });
       }
+      setPreviewUrl(null);
+      setImageName("");
     }
 
     setIsSubmitting(false);

@@ -73,13 +73,6 @@
   margin-top: 0.9rem;
 }
 
-.infos .action .span {
-  font-size: clamp(0.6rem, 1vw, 0.9rem);
-  color: var(--white);
-  text-shadow: 0 0 4px rgba(0, 0, 0);
-  letter-spacing: 1px;
-}
-
 .infos .action .img {
   display: block;
   filter: invert(100%);
@@ -100,7 +93,7 @@
   width: 100%;
 }
 
-.editDelete {
+.edit {
   position: absolute;
   right: 1rem;
   bottom: 4rem;

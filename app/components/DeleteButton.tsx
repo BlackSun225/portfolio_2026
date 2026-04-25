@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { deleteProject } from '@/app/actions/projects';
 import { hasError, hasErrors } from '@/lib/typeGuards';
+import styles from "../lib/styles/deleteButton.module.css";
 
 // Define the interface right here
 interface DeleteButtonProps {
@@ -40,9 +41,9 @@ export function DeleteButton({ projectId }: DeleteButtonProps) {
     <button
       onClick={handleDelete}
       disabled={isDeleting}
-      className="bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 disabled:bg-red-300"
+      className={styles.delete}
     >
-      {isDeleting ? 'Deleting...' : 'Delete'}
+      {isDeleting ? '⌛' : '🗑️'}
     </button>
   );
 }

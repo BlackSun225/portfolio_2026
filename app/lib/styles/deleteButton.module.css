@@ -1,0 +1,17 @@
+.delete {
+  position: absolute;
+  right: 1rem;
+  bottom: 7rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 1;
+  background: white;
+  box-shadow: 0 0 5px gray;
+  font-size: 1rem;
+  padding: 0.4rem;
+  cursor: pointer;
+}

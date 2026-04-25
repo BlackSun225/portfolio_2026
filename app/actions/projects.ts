@@ -201,7 +201,7 @@ export async function deleteProject(id: number): Promise<ActionResponse> {
     }
 
     // Delete image from image server
-    const filename = project.imageUrl.split('/').pop();
+    const filename = project.dataValues.imageUrl.split('/').pop();
     if (filename) {
       await deleteImage(filename).catch(() => {
         console.log('⚠️ Could not delete image from server');

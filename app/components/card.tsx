@@ -1,26 +1,28 @@
-"use client"
-
-
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../lib/styles/card.module.css";
-import { useContext } from "react";
-import { LangContext } from "./navContext";
-import { dictionary } from "../utils/data";
+// import { useContext } from "react";
+// import { LangContext } from "./navContext";
+// import { dictionary } from "../utils/data";
 import type { Project } from "@/lib/types";
+import CardButton from "./cardButtonText";
+import { DeleteButton } from "./DeleteButton";
 
 const arrow = "/arrow.svg";
 
+
+
 export default function Card({
-    project, date, parentRef, edit = false
+  project, date, parentRef, edit = false, remove = false
 }: {
     project: Project,
     date?: string,
     parentRef?: string,
-    edit?: boolean
+    edit?: boolean,
+    remove?: boolean
 }) {
 
-  const {lang} = useContext(LangContext);
+  // const {lang} = useContext(LangContext);
 
   return (
     <article className={`${parentRef && parentRef == project.id.toString() ? styles.activeCard : ''} ${styles.card}`} >
@@ -40,7 +42,7 @@ export default function Card({
           })}
         </h3>
         <div className={styles.action}>
-          <span className={styles.span} >{dictionary.cardActionText[lang]}</span> 
+          <CardButton />
           <Image 
             className={styles.img} 
             width="40" height="12" src={arrow} 
@@ -49,7 +51,10 @@ export default function Card({
         </div>
       </Link>
       {
-        edit && <Link className={styles.editDelete} href={`/portfolio/edit/${project.id}`} >✒️</Link>
+        remove && <DeleteButton projectId={project.id} />
+      }
+      {
+        edit && <Link className={styles.edit} href={`/portfolio/edit/${project.id}`} >✒️</Link>
       }
       <div className={styles.progress}></div> 
     </article>
