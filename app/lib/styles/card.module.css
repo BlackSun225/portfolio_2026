@@ -62,7 +62,7 @@
 }
 
 .card:hover .infos > *  {
-  opacity: 1;
+  opacity: 0;
 }
 
 .card:hover .infos > .action {
