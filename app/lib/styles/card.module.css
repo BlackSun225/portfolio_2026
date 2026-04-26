@@ -17,7 +17,7 @@
 .card:hover > .img, 
 .activeCard > .img {
   filter: brightness(110%);
-  transform: scale(125%);
+  /* transform: scale(125%); */
 }
 
 .infos {
