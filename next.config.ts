@@ -20,6 +20,11 @@ const localRemotePatterns: RemotePattern[] = [
     hostname: IMAGE_SERVER_HOST,
     port: '2700',
     pathname: '/images/**',
+  },
+  {
+    protocol: 'https',
+    hostname: IMAGE_SERVER_HOST,
+    pathname: '/images/**',
   }
 ]
 
