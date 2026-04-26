@@ -111,7 +111,7 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
               name="title"
               defaultValue={initialData?.title}
               className={styles.input}
-              placeholder="My Awesome Project"
+              placeholder="Project title"
             />
             {errors.title && (
               <p className={styles.error}>{errors.title}</p>
@@ -127,7 +127,7 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
               rows={4}
               defaultValue={initialData?.description}
               className={styles.textarea}
-              placeholder="Describe your project..."
+              placeholder="Describe your project, it's used in image alt for SEO so add techno details "
             />
             {errors.description && (
               <p className={styles.error}>{errors.description}</p>
@@ -159,7 +159,7 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
               name="technologies"
               defaultValue={initialTechnologies}
               className={styles.input}
-              placeholder="React, TypeScript, Node.js"
+              placeholder="Very useful for SEO so list all like : React, TypeScript, Node.js"
             />
             {errors.technologies && (
               <p className={styles.error}>{errors.technologies}</p>
