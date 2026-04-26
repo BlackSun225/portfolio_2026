@@ -24,8 +24,8 @@ export const dictionary = {
     home: {
         gradientSection: {
             h1: {
-                fr: "DÉVELOPPEUR WEB ET MOBILE FULLSTACK",
-                en: "WEB AND MOBILE FULLSTACK DEVELOPER"
+                fr: "DÉVELOPPEUR FULLSTACK",
+                en: "FULLSTACK DEVELOPER"
             },
             p: {
                 fr: `Doudjo Christ FOUSSENI, développeur fullstack Ivoirien.
