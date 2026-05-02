@@ -18,8 +18,8 @@ export const dictionary = {
         }
     },
     copyrighting: {
-        fr: `© Droits d'auteur ${new Date().getFullYear()}. Tous droits reservés`,
-        en: `© Copyright ${new Date().getFullYear()}. All rights reserved`
+        fr: `© Droits d'auteur ${new Date().getFullYear()}. Tous droits reservés - @BlackSun225`,
+        en: `© Copyright ${new Date().getFullYear()}. All rights reserved  - @BlackSun225`
     },
     home: {
         gradientSection: {
