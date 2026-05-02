@@ -87,11 +87,9 @@
 }
 
 .three .right .img {
-  display: block;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 3/2;
   position: relative;
-  overflow: hidden;
 }
 
 .two h2,  .three h2 {

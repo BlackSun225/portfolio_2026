@@ -8,6 +8,10 @@
   column-gap: 5rem;
 }
 
+.footer .left {
+  width: minmax(50px, 200px);
+}
+
 .footer .left div, 
 .footer .right {
   display: flex;
@@ -15,23 +19,18 @@
   align-items: center;
 }
 
-.footer .imgContainer {
-  display: block;
-  position: relative;
-  width: 150px;
-  height: 15px;
-  margin-bottom: 3rem;
-}
-
 .footer .logo {
-  /* display: block; */
-  filter: invert(100%);
-  width: 100%;
-
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-family: var(--font-glass-antiqua);
+  font-size: 1.7rem;
+  margin-bottom: 2.1rem;
 }
+
 
 .footer .right {
-  width: 100%;
+  flex: 1;
 }
 
 .footer ul {

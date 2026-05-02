@@ -81,14 +81,11 @@
   font-weight: 700;
 }
 
-.imgContainer {
-  width: 150px;
-  height: 15px;
-  position: relative;
-}
-
-.imgContainer > img {
-  width: 100%;
+.logo {
+  text-decoration: none;
+  color: black;
+  font-family: var(--font-glass-antiqua);
+  font-size: 1.7rem;
 }
 
 .nav ul {

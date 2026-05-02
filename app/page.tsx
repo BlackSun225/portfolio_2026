@@ -12,6 +12,7 @@ import { RouteContext, LangContext } from "./components/navContext";
 import { dictionary } from "./utils/data";
 
 const olive = "/olive.jpg";
+const bridge = "/bridge.jpg";
 const arrow = "/arrow.svg";
 const baie = "/water_flow.jpg";
 const african_future = "/african_future.jpg";
@@ -54,7 +55,7 @@ export default function Home() {
         </div>
         <div className={styles.right}>
           <div className={styles.img}>
-            <Image fill alt="" src={olive} />
+            <Image fill alt="" src={bridge} />
           </div>
         </div>
       </section>

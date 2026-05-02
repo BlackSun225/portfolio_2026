@@ -12,6 +12,7 @@ import Warning from "../components/warning";
 import styles from "../lib/styles/pricing.module.css";
 
 const happy = "/happy.jpg"
+const tree = "/tree.jpg"
 
 export default function Pricing() {
 
@@ -24,7 +25,7 @@ export default function Pricing() {
             <GradientSection 
                 title={dictionary.pricing.gradient.h1[lang]} 
                 paragraph={dictionary.pricing.gradient.p[lang]} 
-                imagePath={happy} 
+                imagePath={tree} 
                 invite={false} 
             />
             <section className={styles.pricing}>

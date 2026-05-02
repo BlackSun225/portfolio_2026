@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import {DM_Sans } from "next/font/google";
+import {DM_Sans, Glass_Antiqua} from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
@@ -11,6 +11,13 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "900"]
 })
+
+const glassAntiqua = Glass_Antiqua({
+  variable: "--font-glass-antiqua",
+  subsets: ["latin"],
+  weight: ["400"]
+})
+
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://maisondoudjo.com'),
@@ -67,7 +74,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${dmSans.variable} antialiased`} >
+      <body className={`${dmSans.variable} ${glassAntiqua.variable} antialiased`} >
         <NavContextComponent>
           <Navbar />
           {children}

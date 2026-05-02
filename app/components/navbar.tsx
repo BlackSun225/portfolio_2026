@@ -38,8 +38,8 @@ export default function Navbar() {
 
   return (
     <nav className={styles.nav}>
-      <Link className={styles.imgContainer} href="/">
-        <Image fill loading="eager" alt="" src="/logo.svg" /> 
+      <Link className={styles.logo} href="/">
+        MAISON DOUDJO
       </Link>
       <ul className={styles.desk} >
         <li className={current == "work" ? styles.active : ''} >
