@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { Project } from '@/lib/db';
 import { uploadImage, deleteImage } from '@/lib/imageService';
-import { check, z } from 'zod';
+import { z } from 'zod';
 
 // Validation schema
 const ProjectSchema = z.object({

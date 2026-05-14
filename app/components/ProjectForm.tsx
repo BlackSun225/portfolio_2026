@@ -21,7 +21,7 @@ export function ProjectForm({ initialData, isEditing = false }: ProjectFormProps
   const router = useRouter();
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const {lang, setLang} = useContext(LangContext);
+  const {lang} = useContext(LangContext);
   const [previewUrl, setPreviewUrl] = useState<string | null>(
     initialData?.imageUrl || null
   );

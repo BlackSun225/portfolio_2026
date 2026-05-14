@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import NavContextComponent from "./components/navContext";
 import Script from "next/script";
+import { receiveCustomerMessage } from "./actions/mail"; 
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -65,6 +66,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  // receiveCustomerMessage("luckoffi28@gmail.com", "", "small text for the test", "FR")
 
   return (
     <html lang="en" className="js-focus-visible" data-js-focus-visible="">

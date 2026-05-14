@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 import { LangContext } from "../components/navContext";
 import { dictionary } from "../utils/data";
 import GradientSection from "../components/gradientSection";
