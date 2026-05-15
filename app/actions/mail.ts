@@ -1,4 +1,12 @@
 import transporter from "@/lib/mailer";
+import { z } from "zod";
+
+const mailSchema = z.object({
+    customer_email: z.email("Invalid email"),
+    subject: z.string(),
+    customer_text: z.string(),
+    lang: z.string()
+})
 
 // send a mail to the customer trying to contact me, as a confirmation mail.
 async function sendEmailToCustomer( 
@@ -64,21 +72,23 @@ async function sendEmailToCustomer(
 
 
 //send me a mail containing the customer needs
-export async function receiveCustomerMessage(
-    customer_email: string, 
-    subject: string, 
-    customer_text: string, 
-    lang: 'FR' | 'EN'
-) {
+export async function receiveCustomerMessage(formData: FormData) {
 
     try {
-        console.log(`Sending email from ${customer_email}...`)
+        const validatedData = mailSchema.parse({
+            customer_email: formData.get("customer_email"),
+            subject: formData.get("subject"),
+            customer_text: formData.get("customer_text"),
+            lang: formData.get("lang"),
+        });
+
+        console.log(`Sending email from ${validatedData.customer_email}...`)
     
         const mailOptions = {
-            from: `${customer_email} <Portfolio>`,
+            from: `${validatedData.customer_email} <Portfolio>`,
             to: "yohananchris@outlook.com",
-            replyTo: customer_email, // So i can respond to the customer
-            subject: subject ?? "Prise de contact depuis le portfolio",
+            replyTo: validatedData.customer_email, // So i can respond to the customer
+            subject: validatedData.subject ?? "Prise de contact depuis le portfolio",
             cc: "yohananchris@gmail.com",
             // attachments: [
             //     {
@@ -95,10 +105,10 @@ export async function receiveCustomerMessage(
                 </head>
                 <body>
                     <main>
-                        <p><strong>Langue : </strong><span>${lang}</span></p>
-                        <p>${customer_text}</p>
+                        <p><strong>Langue : </strong><span>${validatedData.lang}</span></p>
+                        <p>${validatedData.customer_text}</p>
                         <p>
-                        ${lang == "FR" ? "Cordialement" : "See you soon (sorry for my english)"}
+                        ${validatedData.lang == "FR" ? "Cordialement" : "See you soon (sorry for my english)"}
                         </p>
                     </main>
                 </body>
@@ -108,10 +118,11 @@ export async function receiveCustomerMessage(
 
         const result = await transporter.sendMail(mailOptions);
         console.log('Email sending result:', result);
-        sendEmailToCustomer(customer_email, subject, customer_text, "FR");
+        sendEmailToCustomer(validatedData.customer_email, validatedData.subject, validatedData.customer_text, "FR");
         return result;
     }catch(err) {
         console.error('Error sending email:', err);
+        return "Error sending email";
     }
 }
 
