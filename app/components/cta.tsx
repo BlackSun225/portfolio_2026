@@ -12,7 +12,7 @@ export default function Cta() {
     const {lang} = useContext(LangContext);
 
     return (
-        <Link className={styles.invite} href="mailto:yohananchris@outlook.com">
+        <Link className={styles.invite} href="/mail">
             <span>{dictionary.actionButton[lang]}</span>
             <Image width="40" height="12" alt="" src={arrow} />
         </Link>

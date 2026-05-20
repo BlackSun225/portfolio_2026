@@ -73,7 +73,7 @@ export default function Navbar() {
         </ul>
       </label>
 
-      <Link className={`${styles.desk} ${styles.btn}`} href="mailto:yohananchris@outlook.com">{dictionary.actionButton[lang]}</Link>
+      <Link className={`${styles.desk} ${styles.btn}`} href="/mail">{dictionary.actionButton[lang]}</Link>
 
       <span className={styles.refSpan} ></span>
 

@@ -1,0 +1,74 @@
+.mailForm  {
+    min-height: calc(100dvh - 14.7rem);
+}
+
+.h1 {
+    font-size: clamp(1.2rem, 4.7vw, 2rem);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.form {
+    /* width: 50%; */
+    width: clamp(300px, 100%, 500px);
+    margin: 0 auto;
+    padding: 1rem 0;
+    /* border: 1px solid red; */
+}
+
+.inputBox {
+    display: block;
+    /* width: clamp(300px, 100%, 500px); */
+    margin-bottom: 1rem;
+}
+
+.label{
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.required::after {
+    content: "*";
+    display: inline;
+    color: red;
+    font-size: 0.9rem;
+}
+
+.input, .textarea {
+    display: block;
+    width: 100%;
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
+}
+
+.textarea {
+    min-height: 5rem;
+}
+
+.error {
+    color: red;
+    font-size: 0.85rem;
+}
+
+.hiddenInput {
+    display: block;
+    width: 0;
+    visibility: hidden;
+}
+
+.submitBtn {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 2px solid green;
+    color: green;
+    font-weight: 600;
+    /* margin: 1rem auto; */
+    cursor: pointer;
+    transition: 0.5s all ease-in-out;
+}
+
+.submitBtn:hover {
+    background-color: rgb(176, 255, 176);
+}
