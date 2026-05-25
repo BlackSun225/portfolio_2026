@@ -40,7 +40,7 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             export PNPM_HOME="/home/blacksun225_deploy/.local/share/pnpm"
-            export PATH="$PNPM_HOME:$PATH"
+            export PATH="$PNPM_HOME/bin:$PATH"
             git config --global --add safe.directory /var/www/portfolio
             cd /var/www/portfolio
             git fetch origin main
