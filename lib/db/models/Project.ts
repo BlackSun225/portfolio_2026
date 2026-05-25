@@ -18,15 +18,15 @@ interface ProjectCreationAttributes extends Optional<ProjectAttributes, 'id'> {}
 
 class Project extends Model<ProjectAttributes, ProjectCreationAttributes> 
   implements ProjectAttributes {
-  public id!: number
-  public title!: string
-  public description!: string
-  public urlPath!: string
-  public imageUrl!: string
-  public technologies!: string[]
+  declare id: number
+  declare title: string
+  declare description: string
+  declare urlPath: string
+  declare imageUrl: string
+  declare technologies: string[]
   
-  public readonly createdAt!: Date
-  public readonly updatedAt!: Date
+  declare readonly createdAt: Date
+  declare readonly updatedAt: Date
 }
 
 Project.init(
