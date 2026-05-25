@@ -90,7 +90,7 @@ export async function receiveCustomerMessage(validatedData: {
     try {
         const actionCheck = mailSchema.safeParse(validatedData);
         if (!actionCheck.success) {
-            return { status: false, error: actionCheck.error };
+            return { status: false, error: z.flattenError(actionCheck.error).fieldErrors };
         }
 
         console.log(`Sending email from ${actionCheck.data.customer_email}...`);
@@ -141,7 +141,10 @@ export async function receiveCustomerMessage(validatedData: {
         return { status: true, error: null };
     } catch (err) {
         console.error('Error sending email:', err);
-        return { status: false, error: err };
+        return {
+            status: false,
+            error: err instanceof Error ? err.message : "Unknown error occurred"
+        };
     }
 }
 

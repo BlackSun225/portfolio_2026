@@ -132,29 +132,39 @@ export default function MailForm() {
             try {
                 const result = await receiveCustomerMessage(validationResult.data);
                 if (result.status) {
-                    setTimeout(() => {
-                        setFormState({
-                            general: "",
-                            customer_email: "",
-                            customer_name: "",
-                            customer_text: "",
-                            lang: pageDictionary.local[lang]
-                        });
-                        setMailResult({ status: true, error: null });
-                    }, 1000)
+                    setFormState({
+                        general: "",
+                        customer_email: "",
+                        customer_name: "",
+                        customer_text: "",
+                        lang: pageDictionary.local[lang]
+                    });
+                    setMailResult({ status: true, error: null });
                 } else {
+                    const errorMsg = typeof result.error === 'string'
+                        ? result.error
+                        : (lang === LangPrefix.fr
+                            ? "Une erreur est survenue lors de l'envoi."
+                            : "An error occurred while sending.");
                     setFormState(prev => ({
                         ...prev,
-                        general: JSON.stringify(result.error) ?? ""
+                        general: errorMsg
                     }));
-                    setMailResult({ status: false, error: JSON.stringify(result.error) ?? "" });
+                    setMailResult({ status: false, error: errorMsg });
                 }
             } catch (error) {
+                console.error(error);
                 setFormState(prev => ({
                     ...prev,
-                    general: JSON.stringify(error)
+                    general: lang === LangPrefix.fr
+                        ? "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard."
+                        : "An error occurred while sending your message. Please try again later."
                 }));
-                setMailResult({ status: false, error: JSON.stringify(error) });
+                setMailResult({
+                    status: false, error: lang === LangPrefix.fr
+                        ? "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard."
+                        : "An error occurred while sending your message. Please try again later."
+                });
             } finally {
                 setIsSending(false);
             }
@@ -180,10 +190,7 @@ export default function MailForm() {
             }
             console.log(errors);
 
-
-            setTimeout(() => {
-                setIsSending(false);
-            }, 500)
+            setIsSending(false);
             setFormSubmitError(formSubmitErrorClone);
         }
 
@@ -209,6 +216,7 @@ export default function MailForm() {
                             if (formSubmitError) {
                                 setFormSubmitError(null);
                             }
+                            if (mailResult) setMailResult(null);
                         }}
                     />
                     {formSubmitError?.customer_email && (
@@ -232,6 +240,7 @@ export default function MailForm() {
                             if (formSubmitError) {
                                 setFormSubmitError(null);
                             }
+                            if (mailResult) setMailResult(null);
                         }}
                     />
                     {formSubmitError?.customer_name && (
@@ -254,6 +263,7 @@ export default function MailForm() {
                             if (formSubmitError) {
                                 setFormSubmitError(null);
                             }
+                            if (mailResult) setMailResult(null);
                         }}
                     ></textarea>
                     {formSubmitError?.customer_text && (
@@ -262,6 +272,21 @@ export default function MailForm() {
                 </label>
 
                 <input onChange={() => { }} className={styles.hiddenInput} name="lang" value={pageDictionary.local[lang]} />
+
+                {mailResult?.status === false && (
+                    <p className={styles.error} style={{ marginBottom: "1rem", fontWeight: "600" }}>
+                        {formState.general}
+                    </p>
+                )}
+
+                {mailResult?.status === true && (
+                    <p style={{ color: "green", fontSize: "0.9rem", marginBottom: "1rem", fontWeight: "600" }}>
+                        {lang === LangPrefix.fr
+                            ? "✓ Mail envoyé avec succès !"
+                            : "✓ Mail sent successfully!"}
+                    </p>
+                )}
+
 
                 <button
                     disabled={isSending}
