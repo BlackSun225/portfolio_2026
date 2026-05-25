@@ -114,8 +114,8 @@ export async function receiveCustomerMessage(validatedData: {
                         <section style="padding:0 1rem;" >
                             <p><strong>Langue : </strong><span>${validatedData.lang}</span></p>
                             <p>Ci-dessous le message du client : </p>
-                            <p>${validatedData.customer_text}</p>
-                            <p style="background:rgb(255, 247, 238);border:2px solid rgb(234, 120, 33);border-radius:7px;padding:1rem;" >
+                            <p style="background:rgb(255, 247, 238);border:2px solid rgb(234, 120, 33);border-radius:7px;padding:1rem;" >${validatedData.customer_text}</p>
+                            <p>
                             ${validatedData.lang == "FR" ? "Cordialement" : "See you soon (sorry for my english)"}
                             </p>
                         </section>
