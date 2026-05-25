@@ -46,8 +46,7 @@ jobs:
             cd /var/www/portfolio
             git fetch origin main
             git reset --hard origin/main
-            rm -rf node_modules
-            pnpm install --no-frozen-lockfile
+            pnpm install --prefer-offline --no-frozen-lockfile
             pnpm run build
             pm2 restart portfolio || pm2 start npm --name portfolio -- start
             pm2 save
