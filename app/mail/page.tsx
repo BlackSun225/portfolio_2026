@@ -71,16 +71,19 @@ const pageDictionary = {
 
 
 export default function MailForm() {
-    const {lang} = useContext(LangContext);
+    const { lang } = useContext(LangContext);
     const router = useRouter();
     const [isSending, setIsSending] = useState<boolean>(false);
+    const [mailResult, setMailResult] = useState<{ status: boolean, error: string | null } | null>(null);
 
     const [formState, setFormState] = useState<{
+        general: string,
         customer_email: string,
         customer_name: string,
         customer_text: string,
         lang: string
     }>({
+        general: "",
         customer_email: "",
         customer_name: "",
         customer_text: "",
@@ -88,18 +91,18 @@ export default function MailForm() {
     });
 
     const [formSubmitError, setFormSubmitError] = useState<
-    {
-        customer_email?: string | undefined;
-        customer_name?: string | undefined;
-        customer_text?: string | undefined;
-        lang?: string | undefined;
-    } | null>(null);
+        {
+            customer_email?: string | undefined;
+            customer_name?: string | undefined;
+            customer_text?: string | undefined;
+            lang?: string | undefined;
+        } | null>(null);
 
 
     const mailSchema = z.object({
-        customer_email: z.email(), 
+        customer_email: z.email(),
         customer_name: z.string().min(
-            3, 
+            3,
             lang == LangPrefix.fr ? "Ce champ doit contenir au moins 3 lettres" : "This field should contains at least 3 letters"
         ).regex(
             /^[\p{L}' -]+$/u,
@@ -114,7 +117,7 @@ export default function MailForm() {
 
     async function handleSubmit(formData: FormData) {
         setIsSending(true);
-   
+
         z.config(lang == LangPrefix.fr ? fr() : en());
 
         const validationResult = mailSchema.safeParse({
@@ -125,25 +128,42 @@ export default function MailForm() {
             lang: formData.get("lang"),
         });
 
-        if(validationResult.success) {
-            const result = await receiveCustomerMessage(validationResult.data);
-        
-            if(result.status) {
-                setTimeout(() => {
-                    setIsSending(false);
-                    
-                    setFormState({
-                        customer_email: "",
-                        customer_name: "",
-                        customer_text: "",
-                        lang: pageDictionary.local[lang]
-                    });
-                }, 1000)
+        if (validationResult.success) {
+            try {
+                const result = await receiveCustomerMessage(validationResult.data);
+                if (result.status) {
+                    setTimeout(() => {
+                        setFormState({
+                            general: "",
+                            customer_email: "",
+                            customer_name: "",
+                            customer_text: "",
+                            lang: pageDictionary.local[lang]
+                        });
+                        setMailResult({ status: true, error: null });
+                    }, 1000)
+                } else {
+                    setFormState(prev => ({
+                        ...prev,
+                        general: JSON.stringify(result.error) ?? ""
+                    }));
+                    setMailResult({ status: false, error: JSON.stringify(result.error) ?? "" });
+                }
+            } catch (error) {
+                setFormState(prev => ({
+                    ...prev,
+                    general: JSON.stringify(error)
+                }));
+                setMailResult({ status: false, error: JSON.stringify(error) });
+            } finally {
+                setIsSending(false);
             }
 
-        }else{
+
+
+        } else {
             const errors = z.flattenError(validationResult.error).fieldErrors;
-            const formSubmitErrorClone : {
+            const formSubmitErrorClone: {
                 customer_email?: string | undefined;
                 customer_name?: string | undefined;
                 customer_text?: string | undefined;
@@ -155,21 +175,21 @@ export default function MailForm() {
                 lang: ""
             };
 
-            for(const key of Object.keys(errors) as Array<keyof typeof errors> ) {
+            for (const key of Object.keys(errors) as Array<keyof typeof errors>) {
                 formSubmitErrorClone[key] = errors[key]?.join(" 📬 ");
             }
             console.log(errors);
 
-            
+
             setTimeout(() => {
                 setIsSending(false);
             }, 500)
-            setFormSubmitError(formSubmitErrorClone);  
+            setFormSubmitError(formSubmitErrorClone);
         }
-        
+
     }
 
-    return(
+    return (
         <section className={styles.mailForm}>
             <h1 className={styles.h1}>{pageDictionary.h1[lang]}</h1>
             <form className={styles.form} action={handleSubmit}>
@@ -178,21 +198,21 @@ export default function MailForm() {
                     <input
                         type="email"
                         id="customer_email"
-                        name="customer_email" 
+                        name="customer_email"
                         disabled={isSending}
                         className={styles.input}
-                        placeholder={pageDictionary.customer_email.placeholder[lang]} 
-                        value={formState.customer_email} 
+                        placeholder={pageDictionary.customer_email.placeholder[lang]}
+                        value={formState.customer_email}
                         required
                         onChange={(event) => {
-                            setFormState(prev => ({...prev, customer_email: event.target.value}));
-                            if(formSubmitError) {
+                            setFormState(prev => ({ ...prev, customer_email: event.target.value }));
+                            if (formSubmitError) {
                                 setFormSubmitError(null);
                             }
                         }}
                     />
                     {formSubmitError?.customer_email && (
-                    <p className={styles.error}>{formSubmitError?.customer_email}</p>
+                        <p className={styles.error}>{formSubmitError?.customer_email}</p>
                     )}
                 </label>
 
@@ -201,21 +221,21 @@ export default function MailForm() {
                     <input
                         type="text"
                         id="customer_name"
-                        name="customer_name" 
+                        name="customer_name"
                         disabled={isSending}
                         className={styles.input}
-                        placeholder={pageDictionary.customer_name.placeholder[lang]} 
-                        value={formState.customer_name} 
+                        placeholder={pageDictionary.customer_name.placeholder[lang]}
+                        value={formState.customer_name}
                         required
                         onChange={(event) => {
-                            setFormState(prev => ({...prev, customer_name: event.target.value}))
-                            if(formSubmitError) {
+                            setFormState(prev => ({ ...prev, customer_name: event.target.value }))
+                            if (formSubmitError) {
                                 setFormSubmitError(null);
                             }
                         }}
                     />
                     {formSubmitError?.customer_name && (
-                    <p className={styles.error}>{formSubmitError?.customer_name}</p>
+                        <p className={styles.error}>{formSubmitError?.customer_name}</p>
                     )}
                 </label>
 
@@ -223,32 +243,32 @@ export default function MailForm() {
                     <span className={`${styles.label} ${styles.required}`}>{pageDictionary.customer_text[lang]}</span>
                     <textarea
                         id="customer_text"
-                        name="customer_text" 
+                        name="customer_text"
                         disabled={isSending}
-                        className={styles.textarea} 
+                        className={styles.textarea}
                         required
-                        placeholder={pageDictionary.customer_text.placeholder[lang]} 
+                        placeholder={pageDictionary.customer_text.placeholder[lang]}
                         value={formState.customer_text}
                         onChange={(event) => {
-                            setFormState(prev => ({...prev, customer_text: event.target.value}))
-                            if(formSubmitError) {
+                            setFormState(prev => ({ ...prev, customer_text: event.target.value }))
+                            if (formSubmitError) {
                                 setFormSubmitError(null);
                             }
                         }}
                     ></textarea>
                     {formSubmitError?.customer_text && (
-                    <p className={styles.error}>{formSubmitError?.customer_text}</p>
+                        <p className={styles.error}>{formSubmitError?.customer_text}</p>
                     )}
                 </label>
 
-                <input onChange={() => {}} className={styles.hiddenInput} name="lang" value={pageDictionary.local[lang]} />
+                <input onChange={() => { }} className={styles.hiddenInput} name="lang" value={pageDictionary.local[lang]} />
 
-                <button 
-                    disabled={isSending} 
-                    className={styles.submitBtn} 
+                <button
+                    disabled={isSending}
+                    className={styles.submitBtn}
                     type="submit"
                 >
-                    {pageDictionary.btnText[isSending ? 'loading': 'default'][lang]}
+                    {pageDictionary.btnText[isSending ? 'loading' : 'default'][lang]}
                 </button>
             </form>
         </section>

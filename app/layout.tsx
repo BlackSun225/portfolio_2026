@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import {DM_Sans, Glass_Antiqua} from "next/font/google";
-import "./globals.css";
+import "./globals.css"; 
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import NavContextComponent from "./components/navContext";
