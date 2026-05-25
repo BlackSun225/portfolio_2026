@@ -39,11 +39,11 @@ async function sendEmailToCustomer(
                 </head>
                 <body>
                     <main style="max-width:600px;margin:0 auto;">
-                        <h1 style="font-family:'Glass Antiqua';font-size:'1.5rem';text-align:center;background:black;color:ivory;padding:1.5rem;letter-spacing:2px;" >
+                        <h1 style="font-family:'Glass Antiqua',Georgia,serif;font-size:24px;text-align:center;background:black;color:ivory;padding:1.5rem;letter-spacing:2px;" >
                             MAISON DOUDJO
                         </h1>
                         <section style="padding:0 1rem;">
-                            <p>Bonjour <span style="font-family:'Aladin';font-size:1.2rem" >${customer_name}</span>,</p>
+                            <p>Bonjour <span style="font-family:'Aladin',Arial,sans-serif;font-size:18px" >${customer_name}</span>,</p>
                             <p> 
                             ${lang == "FR" ?
                     "Votre mail a bien été envoyé, je vous contacterai après lecture."
@@ -112,7 +112,7 @@ export async function receiveCustomerMessage(validatedData: {
                 </head>
                 <body>
                     <main style="max-width:600px;margin:0 auto;" >
-                        <h1 style="font-family:'Glass Antiqua';font-size:'1.5rem';text-align:center;background:black;color:ivory;padding:1.5rem;letter-spacing:2px;" >
+                        <h1 style="font-family:'Glass Antiqua', Georgia, 'Times New Roman', serif;font-size:24px;text-align:center;background:black;color:ivory;padding:1.5rem;letter-spacing:2px;" >
                             MAISON DOUDJO
                         </h1>
                         <section style="padding:0 1rem;" >
