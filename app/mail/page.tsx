@@ -130,7 +130,14 @@ export default function MailForm() {
 
         if (validationResult.success) {
             try {
+                const startTime = Date.now();
                 const result = await receiveCustomerMessage(validationResult.data);
+
+                const elapsedTime = Date.now() - startTime;
+                if (elapsedTime < 1000) {
+                    await new Promise(resolve => setTimeout(resolve, 1000 - elapsedTime));
+                }
+
                 if (result.status) {
                     setFormState({
                         general: "",
@@ -165,11 +172,10 @@ export default function MailForm() {
                         ? "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer plus tard."
                         : "An error occurred while sending your message. Please try again later."
                 });
+
             } finally {
                 setIsSending(false);
             }
-
-
 
         } else {
             const errors = z.flattenError(validationResult.error).fieldErrors;
@@ -199,7 +205,10 @@ export default function MailForm() {
     return (
         <section className={styles.mailForm}>
             <h1 className={styles.h1}>{pageDictionary.h1[lang]}</h1>
-            <form className={styles.form} action={handleSubmit}>
+            <form className={styles.form} onSubmit={(event) => {
+                event.preventDefault();
+                handleSubmit(new FormData(event.currentTarget));
+            }}>
                 <label htmlFor="customer_email" className={styles.inputBox}>
                     <span className={`${styles.label} ${styles.required}`}>{pageDictionary.customer_email[lang]}</span>
                     <input
