@@ -5,23 +5,23 @@ import { z } from "zod";
 
 const mailSchema = z.object({
     customer_email: z.email(),
-    customer_name: z.string().nonempty().regex(/[a-zA-z]'*-*/),
+    customer_name: z.string().nonempty().regex(/^[\p{L}' -]+$/u),
     // subject: z.string(),
     customer_text: z.string().nonempty(),
     lang: z.enum(["FR", "EN"])
 })
 
 // send a mail to the customer trying to contact me, as a confirmation mail.
-async function sendEmailToCustomer( 
-    customer_email: string, 
-    customer_name: string, 
-    customer_text: string, 
+async function sendEmailToCustomer(
+    customer_email: string,
+    customer_name: string,
+    customer_text: string,
     lang: 'FR' | 'EN'
 ) {
 
     try {
         console.log(`Sending email to ${customer_email}...`);
-    
+
         const mailOptions = {
             from: 'Chris Doudjo Yohanan Fousseni <yohananchris@outlook.com>',
             to: customer_email,
@@ -45,12 +45,12 @@ async function sendEmailToCustomer(
                         <section style="padding:0 1rem;">
                             <p>Bonjour <span style="font-family:'Aladin';font-size:1.2rem" >${customer_name}</span>,</p>
                             <p> 
-                            ${lang == "FR" ? 
-                                "Votre mail a bien été envoyé, je vous contacterai après lecture." 
-                                : 'Your mail has been sent, i will respond after reading it'} 
+                            ${lang == "FR" ?
+                    "Votre mail a bien été envoyé, je vous contacterai après lecture."
+                    : 'Your mail has been sent, i will respond after reading it'} 
                             </p>
                             <p >
-                            ${lang == "FR" ? 'Ci-dessous le contenu de votre mail' : 'Below is your mail content' }
+                            ${lang == "FR" ? 'Ci-dessous le contenu de votre mail' : 'Below is your mail content'}
                             </p>
                             <div style="background:rgb(255, 247, 238);border:2px solid rgb(234, 120, 33);border-radius:7px;padding:1rem;">
                                 ${customer_text}
@@ -73,7 +73,7 @@ async function sendEmailToCustomer(
         const result = await transporter.sendMail(mailOptions);
         console.log('Result sending mail to customer:', result);
         // return result;
-    }catch(err) {
+    } catch (err) {
         console.error('Result sending mail to customer:', err);
     }
 }
@@ -88,14 +88,18 @@ export async function receiveCustomerMessage(validatedData: {
 }) {
 
     try {
+        const actionCheck = mailSchema.safeParse(validatedData);
+        if (!actionCheck.success) {
+            return { status: false, error: actionCheck.error };
+        }
 
-        console.log(`Sending email from ${validatedData.customer_email}...`);
-    
+        console.log(`Sending email from ${actionCheck.data.customer_email}...`);
+
         const mailOptions = {
-            from: `${validatedData.customer_email} <Portfolio>`,
+            from: `${actionCheck.data.customer_email} <Portfolio>`,
             to: "yohananchris@outlook.com",
-            replyTo: validatedData.customer_email, // So i can respond to the customer
-            subject: /*validatedData.subject ??*/ "Prise de contact depuis le portfolio",
+            replyTo: actionCheck.data.customer_email, // So i can respond to the customer
+            subject: /*actionCheck.data.subject ??*/ "Prise de contact depuis le portfolio",
             cc: "yohananchris@gmail.com",
             html: `
             <html>
@@ -133,11 +137,11 @@ export async function receiveCustomerMessage(validatedData: {
         const result = await transporter.sendMail(mailOptions);
         console.log('Result sending customer mail :', result);
 
-        sendEmailToCustomer(validatedData.customer_email, validatedData.customer_name, validatedData.customer_text, validatedData.lang);
-        return {status: true, error: null};
-    }catch(err) {
+        await sendEmailToCustomer(actionCheck.data.customer_email, actionCheck.data.customer_name, actionCheck.data.customer_text, actionCheck.data.lang);
+        return { status: true, error: null };
+    } catch (err) {
         console.error('Error sending email:', err);
-        return {status: false, error: err};
+        return { status: false, error: err };
     }
 }
 
