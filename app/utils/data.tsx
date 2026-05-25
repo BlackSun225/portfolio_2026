@@ -28,13 +28,14 @@ export const dictionary = {
                 en: "FULLSTACK DEVELOPER"
             },
             p: {
-                fr: `Doudjo Christ FOUSSENI, développeur fullstack Ivoirien.
+                fr: `Christ Doudjo FOUSSENI, développeur fullstack Ivoirien.
                 La technologie est un outil puissant qui peut améliorer la qualité de vie et la productivité. 
                 Je m'appuie sur mes compétences et mon expérience, pour concevoir la solution adaptée à vos objectifs.
                 Echangeons nos expériences, notre savoir, et enrichissons nous mutuellement.
                 `,
-                en: `I am Christ Doudjo FOUSSENI, ivorian fullstack developer. 
-                Technology is a powerful tool which can improve humans's life and productivity. I use my skills and my experience, to build the solution that fit you needs.
+                en: `I am Christ Doudjo FOUSSENI, Ivorian fullstack developer. 
+                Technology is a powerful tool which can improve humans's life and productivity. 
+                I use my skills and my experience, to build the solution that fit you needs.
                 Let's trade experience, knowledge and learn from each other. 
                 `
             }

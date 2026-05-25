@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: "Maison Doudjo - @BlackSun225",
   description: "Fullstack developer portfolio",
   keywords: [
-    "site web",'Developpeur full stack', 'Fullstack Developer', "développeur d'application", "développeur abidjan",
+    "maison doudjo", "site web",'Developpeur full stack', 'Fullstack Developer', "développeur d'application", "développeur abidjan",
     "next.js full stack developer portfolio", 'React', 'Node.js', 'Go', 'mobile development', 
     "hire next.js developer from africa", 'Web Development', 'Nextjs', "freelance developer",
     "remote from Ivory Coast", "figma to code", "design to code", "vuejs", "flutter", "react native",
