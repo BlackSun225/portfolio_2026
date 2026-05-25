@@ -41,11 +41,12 @@ jobs:
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             export PNPM_HOME="/home/blacksun225_deploy/.local/share/pnpm"
             export PATH="$PNPM_HOME/bin:$PATH"
+            export CI=false
             git config --global --add safe.directory /var/www/portfolio
             cd /var/www/portfolio
             git fetch origin main
             git reset --hard origin/main
-            pnpm install
+            pnpm install --no-frozen-lockfile
             pnpm run build
             pm2 restart portfolio || pm2 start npm --name portfolio -- start
             pm2 save
