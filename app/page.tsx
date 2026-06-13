@@ -6,22 +6,27 @@ import styles from "@/app/lib/styles/home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import GradientSection from "./components/gradientSection";
+import { ViewTransition } from 'react';
+import { usePathname } from "next/navigation";
 
 import { useContext } from "react";
 import { LangContext } from "./components/navContext";
 import { dictionary } from "./utils/data";
+import { vt } from "./lib/viewTransition";
 
-const olive = "/olive.jpg";
-const bridge = "/bridge.jpg";
 const arrow = "/arrow.svg";
 const baie = "/water_flow.jpg";
 const african_future = "/african_future.jpg";
+const craftmanship = "/craftmanship.jpg";
 
 
 
 export default function Home() {
 
   const {lang} = useContext(LangContext);
+  const pathname = usePathname();
+
+  const isHome = pathname === "/";
 
   return (
     <>
@@ -57,7 +62,9 @@ export default function Home() {
         </div>
         <div className={styles.right}>
           <div className={styles.img}>
-            <Image fill alt="" src={bridge} />
+            <ViewTransition name={vt.service} share="morph" >
+              <Image fill alt="" src={craftmanship} />
+            </ViewTransition>
           </div>
         </div>
       </section>

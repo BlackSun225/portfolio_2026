@@ -13,7 +13,7 @@
     /* width: 50%; */
     width: clamp(300px, 100%, 500px);
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 1rem;
     /* border: 1px solid red; */
 }
 

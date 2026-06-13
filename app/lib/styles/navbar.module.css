@@ -30,6 +30,7 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  font-size: 0.8rem;
 }
 
 .langDropdown .head {
@@ -43,7 +44,7 @@
 
 .arrow {
   width: 0;
-  border-width: 5px 5px 0 5px;
+  border-width: 4px 5px 0 5px;
   border-color: black transparent transparent transparent;
   border-style: solid;
   transition: all 0.2s linear;
@@ -293,6 +294,6 @@
   }
 
   .langDropdown {
-    right: 6rem;
+    right: max(4.5rem, 12dvw);
   }
 }

@@ -44,7 +44,7 @@ export default function Footer() {
         </ul>
         <div className={styles.lastDivRight}>
           <Cta />
-          <p>{dictionary.copyrighting[lang]}</p>
+          <h6>{dictionary.copyrighting[lang]}</h6>
         </div>
       </div>
     </footer>

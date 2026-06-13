@@ -73,9 +73,9 @@
   row-gap: 3rem;
 }
 
-.footer .lastDivRight p {
+.footer .lastDivRight h6 {
   color: var(--darkgrey);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 500;
 }
 

@@ -57,18 +57,18 @@ export default function Navbar() {
         <input className={styles.dropTrigger} type="checkbox" />
         <div className={styles.head}>
           <span className={styles.headText} > {lang.toUpperCase()} </span>
-          <Image className={styles.headImg} width="20" height="19" src={lang == "fr" ? france : usa } alt="language flag" />
+          <Image className={styles.headImg} width="19" height="16" src={lang == "fr" ? france : usa } alt="language flag" />
           <span className={styles.arrow}></span>
         </div>
 
         <ul className={styles.body} >
           <li className={`${styles.row} ${lang == 'fr' && styles.active}`} onClick={() => changeLang("fr")} >
             <span>FR</span>
-            <Image width="20" height="19" src={france} alt="france" />
+            <Image width="19" height="16" src={france} alt="france" />
           </li>
           <li className={`${styles.row} ${lang == 'en' && styles.active}`} onClick={() => changeLang("en")} >
             <span>EN</span>
-            <Image width="20" height="19" src={usa} alt="usa" />
+            <Image width="19" height="16" src={usa} alt="usa" />
           </li>
         </ul>
       </label>
