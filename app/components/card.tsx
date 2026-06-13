@@ -1,9 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../lib/styles/card.module.css";
-// import { useContext } from "react";
-// import { LangContext } from "./navContext";
-// import { dictionary } from "../utils/data";
 import type { Project } from "@/lib/types";
 import CardButton from "./cardButtonText";
 import { DeleteButton } from "./DeleteButton";
@@ -26,7 +23,7 @@ export default function Card({
 
   return (
     <article className={`${parentRef && parentRef == project.id.toString() ? styles.activeCard : ''} ${styles.card}`} >
-      <Image priority fill className={styles.img} alt="" src={project.imageUrl} />
+      <Image priority fill className={styles.img} alt={`${project.description} - project by a fullstack developer - abidjan`} src={project.imageUrl} />
       <Link title={project.title}
         href={project.urlPath} target="_blank" 
         className={styles.infos} 
@@ -46,7 +43,7 @@ export default function Card({
           <Image 
             className={styles.img} 
             width="40" height="12" src={arrow} 
-            alt={`${project.description} - project by a fullstack developer - abidjan`} 
+            alt="arrow" 
             />
         </div>
       </Link>
